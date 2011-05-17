@@ -1,0 +1,5 @@
+The configuration files .vimrc and .gvimrc are located inside the .vim directory. To use them set up links:
+
+$ cd ~
+$ ln -s .vim/vimrc .vimrgc
+$ ln -s .vim/gvimrc .gvimrc
