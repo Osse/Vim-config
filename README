@@ -1,4 +1,4 @@
-The configuration files .vimrc and .gvimrc are located inside the .vim directory. To use them set up links:
+The configuration files .vimrc and .gvimrc are located inside the .vim directory to making using the repo easier. To use them as your reguler config files for Vim, set up links like this:
 
 $ cd ~
 $ ln -s .vim/vimrc .vimrgc
