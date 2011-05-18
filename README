@@ -4,6 +4,8 @@ $ cd ~
 $ ln -s .vim/vimrc .vimrgc
 $ ln -s .vim/gvimrc .gvimrc
 
+This makes everything easier.
+
 Yep
 Hilsen Phys
 Denne er bare i gren2
