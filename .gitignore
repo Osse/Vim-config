@@ -2,4 +2,5 @@
 .*.sw?
 #Ingore Bazaar repository
 ultisnips_rep/.bzr
+ultisnips_rep/.bzr/
 bundle/
