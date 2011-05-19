@@ -3,6 +3,25 @@
 " Description: Tradsj diverse settings?
 " Last Modified: May 04, 2011
 
+"Start Vundle
+set nocompatible
+filetype off 
+
+set runtimepath+=~/.vim/vundle.git/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+"Mine plugins
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup'
+Bundle 'tomtom/tcomment_vim'
+
+filetype plugin indent on
+"End Vundle
+
+syntax enable
+
 set runtimepath+=~/.vim/ultisnips_rep
 
 set autoindent
@@ -71,10 +90,6 @@ let g:xml_syntax_folding = 1
 set tabpagemax=50
 " noremap <C-l> :tabn<CR>
 " noremap <C-h> :tabp<CR>
-
-"Slå alt på!!!1
-filetype plugin indent on
-syntax enable
 
 " Syntax for Arduino
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
