@@ -1,2 +1,4 @@
 # Vim swap files are ignored
 .*.sw?
+#Ingore Bazaar repository
+ultisnips_rep/.bzr
