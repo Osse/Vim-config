@@ -14,8 +14,8 @@ Bundle 'gmarik/vundle'
 
 "Mine plugins
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup'
 Bundle 'tomtom/tcomment_vim'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 filetype plugin indent on
 "End Vundle
