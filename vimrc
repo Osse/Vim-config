@@ -5,7 +5,7 @@
 
 "Start Vundle
 set nocompatible
-filetype off 
+filetype plugin indent off 
 
 set runtimepath+=~/.vim/vundle.git/
 call vundle#rc()
@@ -15,7 +15,7 @@ Bundle 'gmarik/vundle'
 "Mine plugins
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tomtom/tcomment_vim'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'rstacruz/sparkup' , {'rtp': 'vim/'}
 
 filetype plugin indent on
 "End Vundle
