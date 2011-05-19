@@ -5,5 +5,3 @@ $ ln -s .vim/vimrc .vimrgc
 $ ln -s .vim/gvimrc .gvimrc
 
 This makes everything easier.
-
-vundleTest branch.
