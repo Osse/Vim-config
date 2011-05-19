@@ -7,11 +7,10 @@
 set nocompatible
 filetype plugin indent off 
 
-set runtimepath+=~/.vim/vundle.git/
+set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-
 "Mine plugins
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tomtom/tcomment_vim'
