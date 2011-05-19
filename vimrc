@@ -12,6 +12,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 "Mine plugins
+Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'rstacruz/sparkup' , {'rtp': 'vim/'}
