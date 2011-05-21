@@ -1,7 +1,7 @@
 set co=80
 set lines=50
-colorscheme molokai
-" colorscheme jellybeans
+" colorscheme molokai
+colorscheme jellybeans
 " set background=dark
 " colorscheme solarized
 " set cursorline		" Akser hvor cursor
