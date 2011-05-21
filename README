@@ -1,7 +1,11 @@
-The configuration files .vimrc and .gvimrc are located inside the .vim directory to making using the repo easier. To use them as your reguler config files for Vim, set up links like this:
+The configuration files .vimrc and .gvimrc are located inside the .vim directory to making using the repo easier. To use them as your regular config files for Vim, set up links to them like this:
 
 $ cd ~
 $ ln -s .vim/vimrc .vimrgc
 $ ln -s .vim/gvimrc .gvimrc
 
-This makes everything easier.
+Next, install Vundle:
+
+$ git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+After that, run :BundleInstall from within Vim. This makes Vundle automatically install all the plugins listed in vimrc as 'bundles.' (Note to self: perhaps make Vundle itself a submodule?)
