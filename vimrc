@@ -15,6 +15,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tomtom/tcomment_vim'
+" Bundle 'tpope/vim-repeat'
 Bundle 'rstacruz/sparkup' , {'rtp': 'vim/'}
 
 filetype plugin indent on
@@ -66,6 +67,15 @@ noremap ł gk
 noremap ª h
 noremap ß gj
 noremap ð l
+noremap <F2> :FufBuffer<CR>
+" map <F1> {
+" map <F2> [
+" map <F3> ]
+" map <F4> }
+imap <F1> {
+imap <F2> [
+imap <F3> ]
+imap <F4> }
 
 "Mappings for UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -97,6 +107,9 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 " Ignorecase for Fortran
 autocmd! BufNewFile,BufRead *.f90 setlocal ignorecase
 
+" Legger til : og _ som mulige characters i keywords i LaTeX
+autocmd! BufNewFile,BufRead *.tex setlocal iskeyword+=:,_
+
 "Tradsj phys vim
 set nohlsearch
 
@@ -112,4 +125,6 @@ set wildmode=list:longest
 "Indentation guides
 " set listchars=tab:⡁\ 
 " set list
-set hidden "Gjør det levelig med ulagrede buffers
+
+"Gjør det levelig med ulagrede buffers
+set hidden 
