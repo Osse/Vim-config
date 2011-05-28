@@ -18,6 +18,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'dahu/Insertlessly'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'matchit.zip'
 Bundle 'rstacruz/sparkup' , {'rtp': 'vim/'}
 " Bundle 'tpope/vim-repeat'
 
@@ -100,6 +101,7 @@ let g:xml_syntax_folding = 1
 
 " Noe LaTeX-reier
 let g:plaintex_delimiters = 1
+let g:tex_flavor = "latex"
 
 "Ting som gjelder tabs
 set tabpagemax=50
@@ -108,23 +110,16 @@ noremap <C-h> :tabp<CR>
 
 " Opretter/bruker en autcmd-gruppe som heter minvimrc
 augroup minvimrc
-autocmd! minvimrc
-
-" Syntax for Arduino
-autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
-
-" Ignorecase for Fortran
-autocmd BufNewFile,BufRead *.f90 setlocal ignorecase
-
-" Legger til : og _ som mulige characters i keywords i LaTeX
-" og forandrer filtypen fra plaintex til tex
-autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=:,_
-autocmd BufNewFile,BufRead *.tex set filetype=tex
-
-" Autosource (g)vimrc når de lagres
-autocmd BufWritePost ~/.vimrc source ~/.vimrc
-autocmd BufWritePost ~/.gvimrc source ~/.gvimrc
-
+	autocmd! minvimrc
+	" Syntax for Arduino
+	autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
+	" Ignorecase for Fortran
+	autocmd BufNewFile,BufRead *.f90 setlocal ignorecase
+	" Legger til : og _ som mulige characters i keywords i LaTeX
+	autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=:,_
+	" Autosource (g)vimrc når de lagres
+	autocmd BufWritePost ~/.vimrc source ~/.vimrc
+	autocmd BufWritePost ~/.gvimrc source ~/.gvimrc
 augroup end
 
 "Tradsj phys vim
