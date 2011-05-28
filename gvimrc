@@ -1,14 +1,18 @@
+" Setter størrelse på vinduet
 set co=80
 set lines=50
-" colorscheme molokai
+
+" Velger colorscheme
 colorscheme jellybeans
-" set background=dark
-" colorscheme solarized
-" set cursorline		" Akser hvor cursor
-" set cursorcolumn	" er origo LOL!
+
+" Akser hvor cursor er origo LOL!
+" set cursorline
+" set cursorcolumn
 
 " Saver alt når Gvim mister fokus
-au FocusLost * :wa 
+autocmd FocusLost * :wa 
 
 " Stilige indentation guides
 " hi SpecialKey guifg=#222222 gui=NONE
+" set listchars=tab:⡁\ 
+" set list
