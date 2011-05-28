@@ -16,6 +16,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'dahu/Insertlessly'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 Bundle 'rstacruz/sparkup' , {'rtp': 'vim/'}
 " Bundle 'tpope/vim-repeat'
 
