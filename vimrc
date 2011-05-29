@@ -82,6 +82,11 @@ map! <F2> [
 map! <F3> ]
 map! <F4> }
 
+"LaTeX ins mode mappings
+imap <C-f><C-i> <Esc>hysiwBi\emph<Esc>f}.silent! exe ":normal l"<CR>a
+imap <C-f><C-t> <Esc>hysiwBi\texttt<Esc>f}.silent! exe ":normal l"<CR>a
+imap <C-f><C-r> <Esc>hysiwBi\mathrm<Esc>f}.silent! exe ":normal l"<CR>a
+
 "Mappings for UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -112,7 +117,7 @@ noremap <C-h> :tabp<CR>
 augroup minvimrc
 	autocmd! minvimrc
 	" Syntax for Arduino
-	autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
+	autocmd BufNewFile,BufRead *.pde setf arduino
 	" Ignorecase for Fortran
 	autocmd BufNewFile,BufRead *.f90 setlocal ignorecase
 	" Legger til : og _ som mulige characters i keywords i LaTeX
