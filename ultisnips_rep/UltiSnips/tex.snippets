@@ -1,3 +1,17 @@
+#test
+
+snippet "([,_ ])([^,_ ]+) em" "\emph{}" r
+`!p snip.rv = match.group(1)+'\emph{'+match.group(2)+'}'`$0
+endsnippet
+
+snippet "([,_ ])([^,_ ]+) rm" "\mathrm{}" r
+`!p snip.rv = match.group(1)+'\mathrm{'+match.group(2)+'}'`$0
+endsnippet
+
+snippet "([,_ ])([^,_ ]+) txt" "\texttt{}" r
+`!p snip.rv = match.group(1)+'\\texttt{'+match.group(2)+'}'`$0
+endsnippet
+
 ###########################################################################
 #                             LATEX SNIPPETS                              #
 ###########################################################################
@@ -317,7 +331,7 @@ snippet vs "varsigma" i
 \varsigma$0
 endsnippet
 
-snippet tt "tau" i
+snippet tau "tau" i
 \tau$0
 endsnippet
 
@@ -413,7 +427,7 @@ snippet SS "Sigma" i
 \Sigma$0
 endsnippet
 
-snippet TT "Tau" i
+snippet Tau "Tau" i
 \Tau$0
 endsnippet
 

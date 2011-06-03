@@ -1,57 +1,55 @@
 " File: .vimrc
 " Author: Øystein Walle???
 " Description: Tradsj diverse settings?
-" Last Modified: May 04, 2011
+" Last Modified: June 3, 2011
 
-"Start Vundle
 set nocompatible
-filetype plugin indent off 
 
-set runtimepath+=~/.vim/bundle/vundle
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-"Mine plugins
-Bundle 'tpope/vim-surround'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'dahu/Insertlessly'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'matchit.zip'
-Bundle 'rstacruz/sparkup' , {'rtp': 'vim/'}
-" Bundle 'tpope/vim-repeat'
+" Start Vundle
+	filetype plugin indent off 
+	set runtimepath+=~/.vim/bundle/vundle
+	call vundle#rc()
+	Bundle 'gmarik/vundle'
+	" Mine plugins
+	Bundle 'tpope/vim-surround'
+	Bundle 'Lokaltog/vim-easymotion'
+	Bundle 'tomtom/tcomment_vim'
+	Bundle 'dahu/Insertlessly'
+	Bundle 'L9'
+	Bundle 'FuzzyFinder'
+	Bundle 'matchit.zip'
+	Bundle 'godlygeek/tabular'
+	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+	" Bundle 'tpope/vim-repeat'
+" End Vundle
 
 filetype plugin indent on
-"End Vundle
-
 syntax enable
 
 set runtimepath+=~/.vim/ultisnips_rep
-
 set autoindent
-
 set tabstop=4		"Tabs ser ut som 4 spaces
 set softtabstop=4	"Alltid tabs
 set shiftwidth=4	"Bare tabs
 set noexpandtab		"TABS!!!!!!!!!
 set mouse=a
-
+set iminsert=1
+set imsearch=1
 set foldmethod=syntax   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
-
 set incsearch		" Søker etter hvert
 set showcmd			" Viser delkommandoer nede til høyre
 set showmatch		" showmatch
-set autochdir
+" set autochdir
 set linebreak
+set nohlsearch " Tradsj phys vim
+set wildmode=list:longest " Bash-like auto-completion
+set hidden " Gjør det levelig med ulagrede buffers
 
 " Diverse mappings
 let mapleader = "K"
-map <space> /
-map <c-space> ?
-map <Down> gj
+map ! /
 map <Up> gk
 map Y y$
 noremap o o<Space><BS>
@@ -66,28 +64,22 @@ map <Leader>O O<Esc>
 noremap ł gk
 noremap ª h
 noremap ß gj
-noremap ß gj
 noremap ð l
 noremap Q :FufBuffer<CR>
-" lmap <F1> {
-" lmap <F2> [
-" lmap <F3> ]
-" lmap <F4> }
-map <F1> {
-map <F2> [
-map <F3> ]
-map <F4> }
-map! <F1> {
-map! <F2> [
-map! <F3> ]
-map! <F4> }
+lmap <F1> {
+lmap <F2> [
+lmap <F3> ]
+lmap <F4> }
+" map <F1> {
+" map <F2> [
+" map <F3> ]
+" map <F4> }
+" map! <F1> {
+" map! <F2> [
+" map! <F3> ]
+" map! <F4> }
 
-"LaTeX ins mode mappings
-imap <C-f><C-i> <Esc>hysiwBi\emph<Esc>f}.silent! exe ":normal l"<CR>a
-imap <C-f><C-t> <Esc>hysiwBi\texttt<Esc>f}.silent! exe ":normal l"<CR>a
-imap <C-f><C-r> <Esc>hysiwBi\mathrm<Esc>f}.silent! exe ":normal l"<CR>a
-
-"Mappings for UltiSnips
+" Mappings for UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
@@ -105,13 +97,14 @@ let fortran_more_precise=1
 let g:xml_syntax_folding = 1
 
 " Noe LaTeX-reier
+let g:tex_fold_enabled=1
 let g:plaintex_delimiters = 1
 let g:tex_flavor = "latex"
 
-"Ting som gjelder tabs
-set tabpagemax=50
-noremap <C-l> :tabn<CR>
-noremap <C-h> :tabp<CR>
+" LaTeX ins mode mappings
+imap <C-f><C-e> <Esc>?[ _,]?s1<CR>ysWBi\emph<Esc>f}.silent! exe ":normal l"<CR>a
+imap <C-f><C-t> <Esc>?[ _,]?s1<CR>ysWBi\texttt<Esc>f}.silent! exe ":normal l"<CR>a
+imap <C-f><C-r> <Esc>?[ _,]?s1<CR>ysWBi\mathrm<Esc>f}.silent! exe ":normal l"<CR>a
 
 " Opretter/bruker en autcmd-gruppe som heter minvimrc
 augroup minvimrc
@@ -124,20 +117,12 @@ augroup minvimrc
 	autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=:,_
 	" Autosource (g)vimrc når de lagres
 	autocmd BufWritePost ~/.vimrc source ~/.vimrc
-	autocmd BufWritePost ~/.gvimrc source ~/.gvimrc
 augroup end
 
-"Tradsj phys vim
-set nohlsearch
-
-" Bash-like auto-completion
-set wildmode=list:longest
-
-"Gjør det levelig med ulagrede buffers
-set hidden 
-
-" Dette kan bli jævling
-" nnoremap <up> <nop>
-" nnoremap <down> <nop>
-" nnoremap <left> <nop>
-" nnoremap <right> <nop>
+" Skriver highlight group(s) til det under cursor
+func! SynStack()
+	if !exists("*synstack")
+		return
+	endif
+	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc

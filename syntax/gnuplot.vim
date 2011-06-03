@@ -66,9 +66,9 @@ syn match   plotNumber "\<-\?\d\+\>"
 hi def link plotNumber Number
 
 " --- Float ---
-syn match   plotFloat display contained "\d\+\.\d*\(e[-+]\=\d\+\)\="
-syn match   plotFloat display contained "\.\d\+\(e[-+]\=\d\+\)\=\>"
-syn match   plotFloat display contained "\d\+e[-+]\>"
+syn match   plotFloat display "\d\+\.\d*\(e[-+]\=\d\+\)\="
+syn match   plotFloat display "\.\d\+\(e[-+]\=\d\+\)\=\>"
+syn match   plotFloat display "\d\+e[-+]\>"
 hi def link plotFloat Float
 
 " --- Constant Pair ---
