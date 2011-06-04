@@ -20,7 +20,7 @@ set nocompatible
 	Bundle 'matchit.zip'
 	Bundle 'godlygeek/tabular'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-	" Bundle 'tpope/vim-repeat'
+	Bundle 'tpope/vim-repeat'
 " End Vundle
 
 filetype plugin indent on
@@ -46,6 +46,7 @@ set linebreak
 set nohlsearch " Tradsj phys vim
 set wildmode=list:longest " Bash-like auto-completion
 set hidden " Gjør det levelig med ulagrede buffers
+set sessionoptions-=options,blank,winsize
 
 " Diverse mappings
 let mapleader = "K"
