@@ -66,6 +66,8 @@ noremap ª h
 noremap ß gj
 noremap ð l
 noremap Q :FufBuffer<CR>
+vnoremap > >gv
+vnoremap < <gv
 lmap <F1> {
 lmap <F2> [
 lmap <F3> ]
