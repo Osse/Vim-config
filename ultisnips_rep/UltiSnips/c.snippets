@@ -26,14 +26,16 @@ $0
 endsnippet
 
 snippet main "main() (main)"
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[])
+{
 	${0:/* code */}
 	return 0;
 }
 endsnippet
 
 snippet for "for int loop (fori)"
-for (${4:size_t} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
+for (${4:size_t} ${2:i} = 0; $2 < ${1:count}; ${3:++$2})
+{
 	${0:/* code */}
 }
 endsnippet
@@ -74,7 +76,8 @@ fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%
 endsnippet
 
 snippet if "if .. (if)"
-if (${1:/* condition */}) {
+if (${1:/* condition */})
+{
 	${0:/* code */}
 }
 endsnippet
@@ -84,7 +87,8 @@ printf("${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2
 endsnippet
 
 snippet st "struct"
-struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
+struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`}
+{
 	${0:/* data */}
 };
 endsnippet
