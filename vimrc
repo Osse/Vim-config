@@ -41,7 +41,6 @@ set nofoldenable        "dont fold by default
 set incsearch		" Søker etter hvert
 set showcmd			" Viser delkommandoer nede til høyre
 set showmatch		" showmatch
-" set autochdir
 set linebreak
 set nohlsearch " Tradsj phys vim
 set wildmode=list:longest " Bash-like auto-completion
@@ -56,7 +55,7 @@ map Y y$
 noremap o o<Space><BS>
 noremap O O<Space><BS>
 noremap ¤ $
-noremap ' ^
+noremap Æ ^
 noremap : .
 noremap . :
 noremap <Leader>p "_ddP
@@ -73,10 +72,11 @@ lmap <F1> {
 lmap <F2> [
 lmap <F3> ]
 lmap <F4> }
-" map <F1> {
-" map <F2> [
-" map <F3> ]
-" map <F4> }
+map <F1> {
+map <F2> [
+map <F3> ]
+map <F4> }
+map <C-c> <Esc>
 " map! <F1> {
 " map! <F2> [
 " map! <F3> ]
@@ -89,6 +89,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 
 " FuzzyFinder
 let g:fuf_modesDisable = [ 'file', 'coveragefile', 'dir', 'mrufile', 'mrucmd', 'bookmarkfile', 'bookmarkdir', 'tag', 'buffertag', 'taggedfile', 'jumplist', 'changelist', 'quickfix', 'line', 'help', 'givenfile', 'givendir', 'givencmd', 'callbackfile', 'callbackitem' ]
+
 " Fortran er lol
 let fortran_dialect="f90"
 let fortran_free_source=1
@@ -105,11 +106,12 @@ let g:xml_syntax_folding = 1
 let g:tex_fold_enabled=1
 let g:plaintex_delimiters = 1
 let g:tex_flavor = "latex"
+let g:tex_conceal = 'gdm'
 
 " LaTeX ins mode mappings
-imap <C-f><C-e> <Esc>?[ _,]?s1<CR>ysWBi\emph<Esc>f}.silent! exe ":normal l"<CR>a
-imap <C-f><C-t> <Esc>?[ _,]?s1<CR>ysWBi\texttt<Esc>f}.silent! exe ":normal l"<CR>a
-imap <C-f><C-r> <Esc>?[ _,]?s1<CR>ysWBi\mathrm<Esc>f}.silent! exe ":normal l"<CR>a
+" imap <C-f><C-e> <Esc>?[ _,]?s1<CR>ysWBi\emph<Esc>f}.silent! exe ":normal l"<CR>a
+" imap <C-f><C-t> <Esc>?[ _,]?s1<CR>ysWBi\texttt<Esc>f}.silent! exe ":normal l"<CR>a
+" imap <C-f><C-r> <Esc>?[ _,]?s1<CR>ysWBi\mathrm<Esc>f}.silent! exe ":normal l"<CR>a
 
 " Opretter/bruker en autcmd-gruppe som heter minvimrc
 augroup minvimrc
@@ -119,8 +121,8 @@ augroup minvimrc
 	" Ignorecase for Fortran
 	autocmd BufNewFile,BufRead *.f90 setlocal ignorecase
 	" Legger til : og _ som mulige characters i keywords i LaTeX
-	autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=:,_
-	" Autosource (g)vimrc når de lagres
+	autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=_,:
+	" Autosource vimrc når den lagres
 	autocmd BufWritePost ~/.vimrc source ~/.vimrc
 augroup end
 
