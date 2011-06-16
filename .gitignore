@@ -6,6 +6,7 @@ ultisnips_rep/.bzr
 
 #Ignore the bundle dir. Install Vundle "by hand" and then run :BundleInstall
 bundle/*
+!bundle/vundle
 
 #Ignore pyc files in UltiSnips
 ultisnips_rep/plugin/UltiSnips/*.pyc
