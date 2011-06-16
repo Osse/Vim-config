@@ -1,10 +1,15 @@
+Install it like this:
+
+$ cd ~
+$ git clone [--recursive] git://github.com/Osse/Vim-config.git .vim
+
 The configuration files .vimrc and .gvimrc are located inside the .vim directory to making using the repo easier. To use them as your regular config files for Vim, set up links to them like this:
 
 $ cd ~
 $ ln -s .vim/vimrc .vimrgc
 $ ln -s .vim/gvimrc .gvimrc
 
-Next, install Vundle:
+If '--recursive' was left out, install Vundle 'manually':
 
 $ git submodule update --init
 
