@@ -6,6 +6,6 @@ $ ln -s .vim/gvimrc .gvimrc
 
 Next, install Vundle:
 
-$ git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+$ git submodule update --init
 
-After that, run :BundleInstall from within Vim. This makes Vundle automatically install all the plugins listed in vimrc as 'bundles.' (Note to self: perhaps make Vundle itself a submodule?)
+After that, run :BundleInstall from within Vim. This makes Vundle automatically install all the plugins listed in vimrc as 'bundles.'
