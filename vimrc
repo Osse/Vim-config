@@ -1,7 +1,7 @@
 " File: .vimrc
 " Author: Øystein Walle???
 " Description: Tradsj diverse settings?
-" Last Modified: June 3, 2011
+" Last Modified: June 16, 2011
 
 set nocompatible
 " Start Vundle
