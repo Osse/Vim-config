@@ -1,5 +1,6 @@
 Install it like this:
 
+$ rm -rf .vim/ .vimrc .gvimrc
 $ cd ~
 $ git clone [--recursive] git://github.com/Osse/Vim-config.git .vim
 
