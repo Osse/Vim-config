@@ -12,6 +12,8 @@ colorscheme jellybeans
 " Opretter/bruker en autcmd-gruppe som heter mingvimrc
 augroup mingvimrc
 	autocmd! mingvimrc
+	" Går ut av insert mode når Gvim mister fokus
+	autocmd FocusLost * :stopinsert
 	" Saver alt når Gvim mister fokus
 	autocmd FocusLost * :wa 
 	" Autosource gvimrc når de lagres

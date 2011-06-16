@@ -4,19 +4,18 @@
 " Last Modified: June 3, 2011
 
 set nocompatible
-
 " Start Vundle
 	filetype plugin indent off 
 	set runtimepath+=~/.vim/bundle/vundle
 	call vundle#rc()
 	Bundle 'gmarik/vundle'
-	" Mine plugins
+	" Mine plugins:
 	Bundle 'tpope/vim-surround'
 	Bundle 'Lokaltog/vim-easymotion'
 	Bundle 'tomtom/tcomment_vim'
 	Bundle 'dahu/Insertlessly'
-	Bundle 'L9'
-	Bundle 'FuzzyFinder'
+	Bundle 'sjbach/lusty'
+	Bundle 'AutoClose'
 	Bundle 'matchit.zip'
 	Bundle 'godlygeek/tabular'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -27,60 +26,63 @@ filetype plugin indent on
 syntax enable
 
 set runtimepath+=~/.vim/ultisnips_rep
+set sessionoptions-=options,blank,winsize
+set sessionoptions+=winpos
 set autoindent
-set tabstop=4		"Tabs ser ut som 4 spaces
-set softtabstop=4	"Alltid tabs
-set shiftwidth=4	"Bare tabs
-set noexpandtab		"TABS!!!!!!!!!
 set mouse=a
 set iminsert=1
 set imsearch=1
-set foldmethod=syntax   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set incsearch		" Søker etter hvert
-set showcmd			" Viser delkommandoer nede til høyre
-set showmatch		" showmatch
 set linebreak
-set nohlsearch " Tradsj phys vim
+set tabstop=4             " Tabs ser ut som 4 spaces
+set softtabstop=4         " Alltid tabs
+set shiftwidth=4          " Bare tabs
+set noexpandtab           " TABS!!!!!!!!!
+set foldmethod=syntax     " fold based on indent
+set foldnestmax=10        " deepest fold is 10 levels
+set nofoldenable          " dont fold by default
+set incsearch             " Søker etter hvert
+set showcmd               " Viser delkommandoer nede til høyre
+set showmatch             " showmatch
+set nohlsearch            " Tradsj phys vim
 set wildmode=list:longest " Bash-like auto-completion
-set hidden " Gjør det levelig med ulagrede buffers
-set sessionoptions-=options,blank,winsize
+set hidden                " Gjør det levelig med ulagrede buffers
 
 " Diverse mappings
-let mapleader = "K"
-map ! /
-map <Up> gk
-map Y y$
-noremap o o<Space><BS>
-noremap O O<Space><BS>
-noremap ¤ $
-noremap Æ ^
-noremap : .
-noremap . :
-noremap <Leader>p "_ddP
-map <Leader>o o<Esc>
-map <Leader>O O<Esc>
-noremap ł gk
-noremap ª h
-noremap ß gj
-noremap ð l
-noremap Q :FufBuffer<CR>
-vnoremap > >gv
-vnoremap < <gv
-lmap <F1> {
-lmap <F2> [
-lmap <F3> ]
-lmap <F4> }
-map <F1> {
-map <F2> [
-map <F3> ]
-map <F4> }
-map <C-c> <Esc>
-" map! <F1> {
-" map! <F2> [
-" map! <F3> ]
-" map! <F4> }
+map      !         /
+map      <Up>      gk
+map      Y         y$
+noremap  o         o<Space><BS>
+noremap  O         O<Space><BS>
+noremap  ¤         $
+noremap  æ         ^
+noremap  :         .
+noremap  .         :
+noremap  <Leader>p "_ddP
+inoremap  ł         <Up>
+inoremap  ª         <Left>
+inoremap  ß         <Down>
+inoremap  ð         <Right>
+noremap  ł         gk
+noremap  ª         h
+noremap  ß         gj
+noremap  ð         l
+noremap  Q         :LustyBufferExplorer<CR>
+vnoremap >         >gv
+vnoremap <         <gv
+lmap     <F1>      {
+lmap     <F2>      [
+lmap     <F3>      ]
+lmap     <F4>      }
+map      <F1>      {
+map      <F2>      [
+map      <F3>      ]
+map      <F4>      }
+map      <C-c>     <Esc>
+imap     <C-ø>     <Esc>
+imap     <C-Ø>     <Esc>
+imap      <C-æ>     <Esc>
+
+let mapleader="ø"
 
 " Mappings for UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -113,7 +115,7 @@ let g:tex_conceal = 'gdm'
 " imap <C-f><C-t> <Esc>?[ _,]?s1<CR>ysWBi\texttt<Esc>f}.silent! exe ":normal l"<CR>a
 " imap <C-f><C-r> <Esc>?[ _,]?s1<CR>ysWBi\mathrm<Esc>f}.silent! exe ":normal l"<CR>a
 
-" Opretter/bruker en autcmd-gruppe som heter minvimrc
+" Oppretter/bruker en autcmd-gruppe som heter minvimrc
 augroup minvimrc
 	autocmd! minvimrc
 	" Syntax for Arduino
