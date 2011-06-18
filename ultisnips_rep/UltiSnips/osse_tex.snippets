@@ -27,7 +27,7 @@ endsnippet
 snippet eql "Equation with label" b
 \begin{equation}
 	$0
-	\label{eq:$1}
+	\label{eq:${1:label}}
 \end{equation}
 endsnippet
 
@@ -40,8 +40,17 @@ snippet vec "Vector" i
 endsnippet
 
 snippet sqrt "Square root" i
-\sqrt{${1:blabla}}${0}
+\sqrt{${1:square}}${0}
 endsnippet
+
+snippet ang "Angle" i
+\ang{${1:angle}}${0}
+endsnippet
+
+snippet si "Angle" i
+\si{${1:number}}{${2:unit}}${0}
+endsnippet
+
 # Figurer 
 
 snippet fig

@@ -48,7 +48,7 @@ set wildmode=list:longest " Bash-like auto-completion
 set hidden                " Gjør det levelig med ulagrede buffers
 
 " Diverse mappings
-map      !         /
+map      !         ?
 map      <Up>      gk
 map      Y         y$
 noremap  o         o<Space><BS>
@@ -58,10 +58,10 @@ noremap  æ         ^
 noremap  :         .
 noremap  .         :
 noremap  <Leader>p "_ddP
-inoremap  ł         <Up>
-inoremap  ª         <Left>
-inoremap  ß         <Down>
-inoremap  ð         <Right>
+inoremap ł         <Up>
+inoremap ª         <Left>
+inoremap ß         <Down>
+inoremap ð         <Right>
 noremap  ł         gk
 noremap  ª         h
 noremap  ß         gj
@@ -77,10 +77,9 @@ map      <F1>      {
 map      <F2>      [
 map      <F3>      ]
 map      <F4>      }
-map      <C-c>     <Esc>
-imap     <C-ø>     <Esc>
-imap     <C-Ø>     <Esc>
-imap      <C-æ>     <Esc>
+imap     <C-c>     <Esc>
+nnoremap X         <Esc>
+nnoremap S         /
 
 let mapleader="ø"
 
