@@ -7,6 +7,7 @@ ultisnips_rep/.bzr
 #Ignore all the bundle directories except Vundle.
 bundle/*
 !bundle/vundle
+bundle/vundle/doc/tags
 
 #Ignore pyc files in UltiSnips
 ultisnips_rep/plugin/UltiSnips/*.pyc
