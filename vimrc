@@ -49,7 +49,9 @@ set hidden                " Gjør det levelig med ulagrede buffers
 
 " Diverse mappings
 map      !         ?
+nnoremap S         /
 map      <Up>      gk
+map      <Down>    gj
 map      Y         y$
 noremap  o         o<Space><BS>
 noremap  O         O<Space><BS>
@@ -78,8 +80,7 @@ map      <F2>      [
 map      <F3>      ]
 map      <F4>      }
 imap     <C-c>     <Esc>
-nnoremap X         <Esc>
-nnoremap S         /
+nnoremap c)        v)?[.!?]\+?s-1<CR>c
 
 let mapleader="ø"
 
