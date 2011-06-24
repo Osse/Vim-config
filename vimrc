@@ -48,6 +48,7 @@ set wildmode=list:longest " Bash-like auto-completion
 set hidden                " Gjør det levelig med ulagrede buffers
 
 " Diverse mappings
+let mapleader="ø"
 map      !         ?
 nnoremap S         /
 map      <Up>      gk
@@ -71,18 +72,17 @@ noremap  ð         l
 noremap  Q         :LustyBufferExplorer<CR>
 vnoremap >         >gv
 vnoremap <         <gv
-lmap     <F1>      {
-lmap     <F2>      [
-lmap     <F3>      ]
-lmap     <F4>      }
-map      <F1>      {
-map      <F2>      [
-map      <F3>      ]
-map      <F4>      }
+lmap     «         {
+lmap     »         [
+lmap     ©         ]
+lmap     “         }
+map      «         {
+map      »         [
+map      ©         ]
+map      “         }
 imap     <C-c>     <Esc>
 nnoremap c)        v)?[.!?]\+?s-1<CR>c
 
-let mapleader="ø"
 
 " Mappings for UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -106,11 +106,6 @@ let g:tex_fold_enabled=1
 let g:plaintex_delimiters = 1
 let g:tex_flavor = "latex"
 let g:tex_conceal = 'gdm'
-
-" LaTeX ins mode mappings
-" imap <C-f><C-e> <Esc>?[ _,]?s1<CR>ysWBi\emph<Esc>f}.silent! exe ":normal l"<CR>a
-" imap <C-f><C-t> <Esc>?[ _,]?s1<CR>ysWBi\texttt<Esc>f}.silent! exe ":normal l"<CR>a
-" imap <C-f><C-r> <Esc>?[ _,]?s1<CR>ysWBi\mathrm<Esc>f}.silent! exe ":normal l"<CR>a
 
 " Oppretter/bruker en autcmd-gruppe som heter minvimrc
 augroup minvimrc
