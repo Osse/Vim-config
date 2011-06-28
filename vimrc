@@ -15,7 +15,7 @@ set nocompatible
 	Bundle 'tomtom/tcomment_vim'
 	Bundle 'dahu/Insertlessly'
 	Bundle 'sjbach/lusty'
-	Bundle 'AutoClose'
+	" Bundle 'AutoClose'
 	Bundle 'matchit.zip'
 	Bundle 'godlygeek/tabular'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -46,10 +46,11 @@ set showmatch             " showmatch
 set nohlsearch            " Tradsj phys vim
 set wildmode=list:longest " Bash-like auto-completion
 set hidden                " Gjør det levelig med ulagrede buffers
+set nojoinspaces          " Lager ikke 70-talls mellomrom mellom setninger
 
 " Diverse mappings
 let mapleader="ø"
-map      !         ?
+let g:EasyMotion_leader_key = '<Leader>'
 nnoremap S         /
 map      <Up>      gk
 map      <Down>    gj
@@ -72,17 +73,18 @@ noremap  ð         l
 noremap  Q         :LustyBufferExplorer<CR>
 vnoremap >         >gv
 vnoremap <         <gv
-lmap     «         {
-lmap     »         [
-lmap     ©         ]
-lmap     “         }
-map      «         {
-map      »         [
-map      ©         ]
-map      “         }
+lmap     ®         {
+lmap     þ         }
+lmap     đ         [
+lmap     ŋ         ]
+map      ®         {
+map      þ         }
+map      đ         [
+map      ŋ         ]
 imap     <C-c>     <Esc>
 nnoremap c)        v)?[.!?]\+?s-1<CR>c
-
+nnoremap g)        )gE
+nnoremap g(        (gE
 
 " Mappings for UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
