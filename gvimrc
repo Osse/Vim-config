@@ -1,5 +1,9 @@
 " Setter størrelse på vinduet
-set co=80
+if &diff
+	set co=160
+else
+	set co=80
+endif
 set lines=50
 
 " Velger colorscheme
