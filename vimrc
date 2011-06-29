@@ -25,6 +25,7 @@ set nocompatible
 filetype plugin indent on
 syntax enable
 
+" set runtimepath+=~/.vim/latexbox_rep
 set runtimepath+=~/.vim/ultisnips_rep
 set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
@@ -87,6 +88,7 @@ nnoremap g)        )gE
 nnoremap g(        (gE
 
 " Mappings for UltiSnips
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", "Osse"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
@@ -129,3 +131,4 @@ func! SynStack()
 	endif
 	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+" rofl
