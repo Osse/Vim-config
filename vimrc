@@ -1,10 +1,10 @@
 " File: .vimrc
 " Author: Øystein Walle???
 " Description: Tradsj diverse settings?
-" Last Modified: June 16, 2011
+" Last Modified: July 1, 2011
 
 set nocompatible
-" Start Vundle
+" Start Vundle {{{
 	filetype plugin indent off 
 	set runtimepath+=~/.vim/bundle/vundle
 	call vundle#rc()
@@ -20,19 +20,21 @@ set nocompatible
 	Bundle 'godlygeek/tabular'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 	Bundle 'tpope/vim-repeat'
-" End Vundle
+" Vundle }}}
 
+" Vundle har gjort sitt
 filetype plugin indent on
 syntax enable
 
+" Options {{{
 " set runtimepath+=~/.vim/latexbox_rep
 set runtimepath+=~/.vim/ultisnips_rep
 set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
 set autoindent
 set mouse=a
-set iminsert=1
-set imsearch=1
+set iminsert=1            " For å kunne bruke lmap
+set imsearch=1            " For å kunne bruke lmap
 set linebreak
 set tabstop=4             " Tabs ser ut som 4 spaces
 set softtabstop=4         " Alltid tabs
@@ -40,21 +42,21 @@ set shiftwidth=4          " Bare tabs
 set noexpandtab           " TABS!!!!!!!!!
 set foldmethod=syntax     " fold based on indent
 set foldnestmax=10        " deepest fold is 10 levels
-set nofoldenable          " dont fold by default
+set hlsearch              " Lyser opp skit
 set incsearch             " Søker etter hvert
 set showcmd               " Viser delkommandoer nede til høyre
 set showmatch             " showmatch
-set nohlsearch            " Tradsj phys vim
 set wildmode=list:longest " Bash-like auto-completion
 set hidden                " Gjør det levelig med ulagrede buffers
 set nojoinspaces          " Lager ikke 70-talls mellomrom mellom setninger
+" }}}
 
-" Diverse mappings
+" Diverse mappings {{{
 let mapleader="ø"
 let g:EasyMotion_leader_key = '<Leader>'
+nnoremap !         ?
 nnoremap S         /
-map      <Up>      gk
-map      <Down>    gj
+nnoremap <Space>   :nohlsearch<CR>
 map      Y         y$
 noremap  o         o<Space><BS>
 noremap  O         O<Space><BS>
@@ -63,6 +65,7 @@ noremap  æ         ^
 noremap  :         .
 noremap  .         :
 noremap  <Leader>p "_ddP
+" AltGr + WASD er piler {{{
 inoremap ł         <Up>
 inoremap ª         <Left>
 inoremap ß         <Down>
@@ -71,9 +74,11 @@ noremap  ł         gk
 noremap  ª         h
 noremap  ß         gj
 noremap  ð         l
+" }}}
 noremap  Q         :LustyBufferExplorer<CR>
 vnoremap >         >gv
 vnoremap <         <gv
+" AltGr + rt /fg = {}[] {{{
 lmap     ®         {
 lmap     þ         }
 lmap     đ         [
@@ -82,18 +87,21 @@ map      ®         {
 map      þ         }
 map      đ         [
 map      ŋ         ]
+" }}}
 imap     <C-c>     <Esc>
 nnoremap c)        v)?[.!?]\+?s-1<CR>c
 nnoremap g)        )gE
 nnoremap g(        (gE
+" }}}
 
-" Mappings for UltiSnips
+" Mappings for UltiSnips {{{
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "Osse"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
+" }}}
 
-" Fortran er lol
+" Fortran er lol {{{
 let fortran_dialect="f90"
 let fortran_free_source=1
 let fortran_have_tabs=1
@@ -101,17 +109,19 @@ let fortran_fold=1
 let fortran_fold_conditionals=1
 let fortran_do_enddo=1
 let fortran_more_precise=1
+" }}}
 
 " XML folding må på
 let g:xml_syntax_folding = 1
 
-" Noe LaTeX-reier
-let g:tex_fold_enabled=1
-let g:plaintex_delimiters = 1
+" Noe LaTeX-reier {{{
+let g:tex_fold_enabled = 1
 let g:tex_flavor = "latex"
 let g:tex_conceal = 'gdm'
+let g:tex_comment_nospell = 1
+" }}}
 
-" Oppretter/bruker en autcmd-gruppe som heter minvimrc
+" Oppretter/bruker en autcmd-gruppe som heter minvimrc {{{
 augroup minvimrc
 	autocmd! minvimrc
 	" Syntax for Arduino
@@ -123,12 +133,15 @@ augroup minvimrc
 	" Autosource vimrc når den lagres
 	autocmd BufWritePost ~/.vimrc source ~/.vimrc
 augroup end
+" }}}
 
-" Skriver highlight group(s) til det under cursor
+" Funksjon som skriver highlight group(s) til det under cursor {{{
 func! SynStack()
 	if !exists("*synstack")
 		return
 	endif
 	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-" rofl
+" }}}
+
+" vim: foldmethod=marker foldlevel=0
