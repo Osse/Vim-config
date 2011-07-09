@@ -18,8 +18,9 @@ set nocompatible
 	" Bundle 'AutoClose'
 	Bundle 'matchit.zip'
 	Bundle 'godlygeek/tabular'
+	Bundle 'rygwdn/ultisnips'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-	Bundle 'tpope/vim-repeat'
+	" Bundle 'tpope/vim-repeat'
 " Vundle }}}
 
 " Vundle har gjort sitt
@@ -27,8 +28,6 @@ filetype plugin indent on
 syntax enable
 
 " Options {{{
-" set runtimepath+=~/.vim/latexbox_rep
-set runtimepath+=~/.vim/ultisnips_rep
 set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
 set autoindent
@@ -40,8 +39,7 @@ set tabstop=4             " Tabs ser ut som 4 spaces
 set softtabstop=4         " Alltid tabs
 set shiftwidth=4          " Bare tabs
 set noexpandtab           " TABS!!!!!!!!!
-set foldmethod=syntax     " fold based on indent
-set foldnestmax=10        " deepest fold is 10 levels
+set foldmethod=syntax     " fold based on syntax by default
 set hlsearch              " Lyser opp skit
 set incsearch             " Søker etter hvert
 set showcmd               " Viser delkommandoer nede til høyre
@@ -95,7 +93,7 @@ nnoremap g(        (gE
 " }}}
 
 " Mappings for UltiSnips {{{
-let g:UltiSnipsSnippetDirectories = ["UltiSnips", "Osse"]
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", "osse_snippets"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
