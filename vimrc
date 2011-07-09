@@ -28,8 +28,6 @@ filetype plugin indent on
 syntax enable
 
 " Options {{{
-set rtp-=~/.vim/bundle/ultisnips
-set rtp+=~/.vim/bundle/ultisnips,~/.vim/bundle/ultisnips/after
 set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
 set autoindent
@@ -95,6 +93,8 @@ nnoremap g(        (gE
 " }}}
 
 " Mappings for UltiSnips {{{
+set rtp-=~/.vim/bundle/ultisnips " Dette fikser UltiSnips
+set rtp+=~/.vim/bundle/ultisnips,~/.vim/bundle/ultisnips/after
 let g:UltiSnipsSnippetDirectories = ["osse_snippets", "UltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
