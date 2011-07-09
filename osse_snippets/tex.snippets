@@ -1,3 +1,5 @@
+clearsnippets r
+
 snippet qu "Quote marks" w
 `!p snip.rv = "\`\`"`${1}'' ${0}
 endsnippet
@@ -16,18 +18,12 @@ snippet "([,_ ])([^,_ ]+) txt" "\texttt{}" r
 `!p snip.rv = match.group(1)+'\\texttt{'+match.group(2)+'}'`$0
 endsnippet
 
-# Smart texpansion av eqref osv. med stor eller liten bokstav
-
-snippet "(eq|fig|sec|sub|ch)ref" "Equation reference" rw
-\cref{`!p snip.rv = match.group(1)`:$1}$0
-endsnippet
-
-snippet "(Eq|Fig|Sec|Sub|Ch)ref" "Equation reference" rw
-\Cref{`!p snip.rv = match.group(1).lower()`:$1}$0
+snippet "\b(\w{2,3})ref" "Clever reference" r
+\`!p snip.rv = ('C' if match.group(1)[0].isupper() else 'c') + 'ref{'+ match.group(1).lower()`:$1}$0
 endsnippet
 
 snippet r "\ref{}" w!
-\ddref{$1}
+\ref{$1}
 endsnippet
 
 # Diverse mattegreier
