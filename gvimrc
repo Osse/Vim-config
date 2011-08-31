@@ -3,6 +3,7 @@
 " Description: Tradsj diverse settings?
 " Last Modified: July 1, 2011
 
+set guiheadroom=10
 " Setter størrelse på vinduet {{{
 if &diff
 	set co=160
@@ -53,4 +54,4 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 " }}}
 
-" vim: foldmethod=marker foldevel=0
+" vim: foldmethod=marker foldlevel=1

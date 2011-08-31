@@ -19,6 +19,8 @@ set nocompatible
 	Bundle 'matchit.zip'
 	Bundle 'godlygeek/tabular'
 	Bundle 'rygwdn/ultisnips'
+	Bundle 'Rip-Rip/clang_complete'
+	Bundle 'TeX-PDF'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 	" Bundle 'tpope/vim-repeat'
 " Vundle }}}
@@ -40,6 +42,7 @@ set softtabstop=4         " Alltid tabs
 set shiftwidth=4          " Bare tabs
 set noexpandtab           " TABS!!!!!!!!!
 set foldmethod=syntax     " fold based on syntax by default
+set foldlevelstart=1
 set hlsearch              " Lyser opp skit
 set incsearch             " Søker etter hvert
 set showcmd               " Viser delkommandoer nede til høyre
@@ -47,6 +50,8 @@ set showmatch             " showmatch
 set wildmode=list:longest " Bash-like auto-completion
 set hidden                " Gjør det levelig med ulagrede buffers
 set nojoinspaces          " Lager ikke 70-talls mellomrom mellom setninger
+set laststatus=0          " For å skjule Lusty
+set completeopt-=preview
 " }}}
 
 " Diverse mappings {{{
@@ -111,13 +116,20 @@ let fortran_do_enddo=1
 let fortran_more_precise=1
 " }}}
 
+let g:clang_complete_copen  = 1
+let g:clang_complete_auto   = 0
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'ultisnips'
+let g:clang_library_path    = '/usr/local/lib/'
+let g:clang_use_library = 1
+
 " XML folding må på
 let g:xml_syntax_folding = 1
 
 " Noe LaTeX-reier {{{
 let g:tex_fold_enabled = 1
 let g:tex_flavor = "latex"
-let g:tex_conceal = 'gdm'
+let g:tex_conceal = 'sgdm'
 let g:tex_comment_nospell = 1
 " }}}
 

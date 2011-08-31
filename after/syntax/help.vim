@@ -1,1 +1,1 @@
-syn match Dritt "{not in Vi}" conceal
+syn match doNotWant "{not in Vi}" conceal
