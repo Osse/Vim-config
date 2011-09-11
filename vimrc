@@ -15,12 +15,11 @@ set nocompatible
 	Bundle 'tomtom/tcomment_vim'
 	Bundle 'dahu/Insertlessly'
 	Bundle 'sjbach/lusty'
-	" Bundle 'AutoClose'
 	Bundle 'matchit.zip'
 	Bundle 'godlygeek/tabular'
 	Bundle 'rygwdn/ultisnips'
 	Bundle 'Rip-Rip/clang_complete'
-	Bundle 'TeX-PDF'
+	Bundle 'mattsacks/vim-fuzzee'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 	" Bundle 'tpope/vim-repeat'
 " Vundle }}}
@@ -28,6 +27,7 @@ set nocompatible
 " Vundle har gjort sitt
 filetype plugin indent on
 syntax enable
+ru macros/matchit.vim
 
 " Options {{{
 set sessionoptions-=options,blank,winsize
@@ -106,25 +106,14 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 " }}}
 
-" Fortran er lol {{{
-let fortran_dialect="f90"
-let fortran_free_source=1
-let fortran_have_tabs=1
-let fortran_fold=1
-let fortran_fold_conditionals=1
-let fortran_do_enddo=1
-let fortran_more_precise=1
-" }}}
-
+" clang_complete setting {{{
 let g:clang_complete_copen  = 1
 let g:clang_complete_auto   = 0
-let g:clang_snippets = 1
+let g:clang_snippets        = 1
 let g:clang_snippets_engine = 'ultisnips'
 let g:clang_library_path    = '/usr/local/lib/'
-let g:clang_use_library = 1
-
-" XML folding må på
-let g:xml_syntax_folding = 1
+let g:clang_use_library     = 1
+" }}}
 
 " Noe LaTeX-reier {{{
 let g:tex_fold_enabled = 1
