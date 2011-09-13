@@ -15,7 +15,6 @@ set nocompatible
 	Bundle 'tomtom/tcomment_vim'
 	Bundle 'dahu/Insertlessly'
 	" Bundle 'sjbach/lusty'
-	Bundle 'matchit.zip'
 	Bundle 'godlygeek/tabular'
 	Bundle 'rygwdn/ultisnips'
 	Bundle 'kien/ctrlp.vim'
@@ -28,7 +27,8 @@ set nocompatible
 " Vundle har gjort sitt
 filetype plugin indent on
 syntax enable
-
+runtime macros/matchit.vim
+ 
 " Options {{{
 set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
@@ -38,12 +38,8 @@ set iminsert=1            " For å kunne bruke lmap
 set imsearch=1            " For å kunne bruke lmap
 set linebreak
 set tabstop=4             " Tabs ser ut som 4 spaces
-" set softtabstop=4         " Alltid tabs
-" set shiftwidth=4          " Bare tabs
-" set noexpandtab           " TABS!!!!!!!!!
-set softtabstop=3         " Alltid tabs
-set shiftwidth=3          " Bare tabs
-set expandtab           " TABS!!!!!!!!!
+set softtabstop=4         " Alltid tabs
+set shiftwidth=4          " Bare tabs
 set foldmethod=syntax     " fold based on syntax by default
 set foldlevelstart=1
 set hlsearch              " Lyser opp skit
@@ -53,10 +49,9 @@ set showmatch             " showmatch
 set wildmode=list:longest " Bash-like auto-completion
 set hidden                " Gjør det levelig med ulagrede buffers
 set nojoinspaces          " Lager ikke 70-talls mellomrom mellom setninger
-set laststatus=0          " For å skjule Lusty
 set completeopt-=preview
 " }}}
-
+ 
 " Diverse mappings {{{
 let mapleader="ø"
 let g:EasyMotion_leader_key = '<Leader>'
@@ -101,29 +96,19 @@ nnoremap g)        )gE
 nnoremap g(        (gE
 " }}}
 
-" Mappings for UltiSnips {{{
+" Settings for UltiSnips {{{
 set rtp-=~/.vim/bundle/ultisnips " Dette fikser UltiSnips
 set rtp+=~/.vim/bundle/ultisnips,~/.vim/bundle/ultisnips/after
-let g:UltiSnipsSnippetDirectories = ["osse_snippets", "UltiSnips"]
+let g:UltiSnipsSnippetDirectories = [hostname() == 'osse-vb' ? "work_snippets" : "osse_snippets", "UltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 " }}}
 
-" Fortran er lol {{{
-let fortran_dialect="f90"
-let fortran_free_source=1
-let fortran_have_tabs=1
-let fortran_fold=1
-let fortran_fold_conditionals=1
-let fortran_do_enddo=1
-let fortran_more_precise=1
-" }}}
-
 " clang_complete settings {{{
 let g:clang_complete_copen  = 1
 let g:clang_complete_auto   = 0
-let g:clang_snippets = 1
+let g:clang_snippets        = 1
 let g:clang_snippets_engine = 'ultisnips'
 let g:clang_library_path    = '/usr/local/lib/'
 let g:clang_use_library = 1
@@ -131,11 +116,8 @@ let g:clang_use_library = 1
 
 " ctrlp settings {{{
 let g:ctrlp_persistence_input = 0
-let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 0
 " }}}
-
-" XML folding må på
-let g:xml_syntax_folding = 1
 
 " Noe LaTeX-reier {{{
 let g:tex_fold_enabled = 1
@@ -149,12 +131,12 @@ augroup minvimrc
 	autocmd! minvimrc
 	" Syntax for Arduino
 	autocmd BufNewFile,BufRead *.pde setf arduino
-	" Ignorecase for Fortran
-	autocmd BufNewFile,BufRead *.f90 setlocal ignorecase
 	" Legger til : og _ som mulige characters i keywords i LaTeX
 	autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=_,:
 	" Autosource vimrc når den lagres
 	autocmd BufWritePost ~/.vimrc source ~/.vimrc
+	" Indentation settings at work
+	autocmd Filetype cpp if hostname() == 'osse-vb' | setl ts=8 sts=3 sw=3 et | endif
 augroup end
 " }}}
 

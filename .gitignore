@@ -1,9 +1,6 @@
 # Vim swap files are ignored
 .*.sw?
 
-#Ignore Bazaar repository
-ultisnips_rep/.bzr
-
 #Ignore all the bundle directories except Vundle.
 bundle/*
 !bundle/vundle

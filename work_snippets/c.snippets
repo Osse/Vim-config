@@ -1,34 +1,40 @@
 snippet main "main()   wdq (main)" !
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[])
+{
 	${0:/* code */}
 	return 0;
 }
 endsnippet
 
 snippet for "for int loop (fori)" !
-for (${4:size_t} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
+for (${4:size_t} ${2:i} = 0; $2 < ${1:count}; ${3:++$2})
+{
 	${0:/* code */}
 }
 endsnippet
 
 snippet if "if .. (if)" !
-if (${1:/* condition */}) {
+if (${1:/* condition */})
+{
 	${0:/* code */}
 }
 endsnippet
 
 snippet elif "else if" 
-else if (${1:/* condition */}) {
+else if (${1:/* condition */})
+{
 	${0:/* code */}
 }
 
 snippet else "else" 
-else {
+else
+{
 	${0:/* code */}
 }
 
 snippet st "struct" !
-struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
+struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`}
+{
 	${0:/* data */}
 };
 endsnippet
