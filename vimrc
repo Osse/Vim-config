@@ -14,14 +14,14 @@ set nocompatible
 	Bundle 'Lokaltog/vim-easymotion'
 	Bundle 'tomtom/tcomment_vim'
 	Bundle 'dahu/Insertlessly'
-	Bundle 'sjbach/lusty'
-	" Bundle 'AutoClose'
+	" Bundle 'sjbach/lusty'
 	Bundle 'matchit.zip'
 	Bundle 'godlygeek/tabular'
 	Bundle 'rygwdn/ultisnips'
+	Bundle 'kien/ctrlp.vim'
 	Bundle 'Rip-Rip/clang_complete'
-	Bundle 'TeX-PDF'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+    Bundle 'mattsacks/vim-fuzzee'
 	" Bundle 'tpope/vim-repeat'
 " Vundle }}}
 
@@ -38,9 +38,12 @@ set iminsert=1            " For å kunne bruke lmap
 set imsearch=1            " For å kunne bruke lmap
 set linebreak
 set tabstop=4             " Tabs ser ut som 4 spaces
-set softtabstop=4         " Alltid tabs
-set shiftwidth=4          " Bare tabs
-set noexpandtab           " TABS!!!!!!!!!
+" set softtabstop=4         " Alltid tabs
+" set shiftwidth=4          " Bare tabs
+" set noexpandtab           " TABS!!!!!!!!!
+set softtabstop=3         " Alltid tabs
+set shiftwidth=3          " Bare tabs
+set expandtab           " TABS!!!!!!!!!
 set foldmethod=syntax     " fold based on syntax by default
 set foldlevelstart=1
 set hlsearch              " Lyser opp skit
@@ -78,7 +81,8 @@ noremap  ª         h
 noremap  ß         gj
 noremap  ð         l
 " }}}
-noremap  Q         :LustyBufferExplorer<CR>
+noremap  Q         :CtrlPBuffer<CR>
+" noremap  Q         :LustyBufferExplorer<CR>
 vnoremap >         >gv
 vnoremap <         <gv
 " AltGr + rt /fg = {}[] {{{
@@ -116,12 +120,19 @@ let fortran_do_enddo=1
 let fortran_more_precise=1
 " }}}
 
+" clang_complete settings {{{
 let g:clang_complete_copen  = 1
 let g:clang_complete_auto   = 0
 let g:clang_snippets = 1
 let g:clang_snippets_engine = 'ultisnips'
 let g:clang_library_path    = '/usr/local/lib/'
 let g:clang_use_library = 1
+" }}}
+
+" ctrlp settings {{{
+let g:ctrlp_persistence_input = 0
+let g:ctrlp_by_filename = 1
+" }}}
 
 " XML folding må på
 let g:xml_syntax_folding = 1
