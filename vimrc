@@ -7,7 +7,11 @@ set nocompatible
 " Start Vundle {{{
 	filetype plugin indent off 
 	set runtimepath+=~/.vim/bundle/vundle
-	call vundle#rc()
+	if has("win32")
+		call vundle#rc("$HOMEa/vimfiles/bundle")
+	else
+		call vundle#rc()
+	endif
 	Bundle 'gmarik/vundle'
 	" Mine plugins:
 	Bundle 'tpope/vim-surround'
@@ -138,15 +142,6 @@ augroup minvimrc
 	" Indentation settings at work
 	autocmd Filetype cpp if hostname() == 'osse-vb' | setl ts=8 sts=3 sw=3 et | endif
 augroup end
-" }}}
-
-" Funksjon som skriver highlight group(s) til det under cursor {{{
-func! SynStack()
-	if !exists("*synstack")
-		return
-	endif
-	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
 " }}}
 
 " vim: foldmethod=marker foldlevel=0
