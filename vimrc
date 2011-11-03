@@ -8,8 +8,10 @@ set nocompatible
 	filetype plugin indent off 
 	set runtimepath+=~/.vim/bundle/vundle
 	if has("win32")
-		call vundle#rc("$HOMEa/vimfiles/bundle")
+		set runtimepath+=~/vimfiles/bundle/vundle
+		call vundle#rc('$HOME/vimfiles/bundle')
 	else
+		set runtimepath+=~/.vim/bundle/vundle
 		call vundle#rc()
 	endif
 	Bundle 'gmarik/vundle'
@@ -18,13 +20,12 @@ set nocompatible
 	Bundle 'Lokaltog/vim-easymotion'
 	Bundle 'tomtom/tcomment_vim'
 	Bundle 'dahu/Insertlessly'
-	" Bundle 'sjbach/lusty'
 	Bundle 'godlygeek/tabular'
 	Bundle 'rygwdn/ultisnips'
 	Bundle 'kien/ctrlp.vim'
 	Bundle 'Rip-Rip/clang_complete'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-    Bundle 'mattsacks/vim-fuzzee'
+	" Bundle 'mattsacks/vim-fuzzee'
 	" Bundle 'tpope/vim-repeat'
 " Vundle }}}
 
@@ -34,6 +35,12 @@ syntax enable
 runtime macros/matchit.vim
  
 " Options {{{
+if has("win32")
+	set guifont=Lucida_Console:h10:cANSI
+	exe 'cd C:\Users\' . $USERNAME
+else
+	set guifont=Ubuntu\ Mono\ 12
+endif
 set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
 set autoindent
@@ -54,6 +61,7 @@ set wildmode=list:longest " Bash-like auto-completion
 set hidden                " Gjør det levelig med ulagrede buffers
 set nojoinspaces          " Lager ikke 70-talls mellomrom mellom setninger
 set completeopt-=preview
+set showbreak=>\ 
 " }}}
  
 " Diverse mappings {{{
@@ -142,6 +150,15 @@ augroup minvimrc
 	" Indentation settings at work
 	autocmd Filetype cpp if hostname() == 'osse-vb' | setl ts=8 sts=3 sw=3 et | endif
 augroup end
+" }}}
+
+" Funksjon som skriver highlight group(s) til det under cursor {{{
+func! SynStack()
+	if !exists("*synstack")
+		return
+	endif
+	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 " }}}
 
 " vim: foldmethod=marker foldlevel=0
