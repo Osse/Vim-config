@@ -20,7 +20,7 @@ set nocompatible
 	Bundle 'kien/ctrlp.vim'
 	Bundle 'Rip-Rip/clang_complete'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-    Bundle 'mattsacks/vim-fuzzee'
+    " Bundle 'mattsacks/vim-fuzzee'
 	" Bundle 'tpope/vim-repeat'
 " Vundle }}}
 
@@ -50,6 +50,7 @@ set wildmode=list:longest " Bash-like auto-completion
 set hidden                " Gjør det levelig med ulagrede buffers
 set nojoinspaces          " Lager ikke 70-talls mellomrom mellom setninger
 set completeopt-=preview
+set showbreak=>\ 
 " }}}
  
 " Diverse mappings {{{
