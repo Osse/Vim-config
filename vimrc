@@ -6,8 +6,13 @@
 set nocompatible
 " Start Vundle {{{
 	filetype plugin indent off 
-	set runtimepath+=~/.vim/bundle/vundle
-	call vundle#rc()
+	if has("win32")
+		set runtimepath+=~/vimfiles/bundle/vundle
+		call vundle#rc('$HOME/vimfiles/bundle')
+	else
+		set runtimepath+=~/.vim/bundle/vundle
+		call vundle#rc()
+	endif
 	Bundle 'gmarik/vundle'
 	" Mine plugins:
 	Bundle 'tpope/vim-surround'
@@ -30,6 +35,12 @@ syntax enable
 runtime macros/matchit.vim
  
 " Options {{{
+if has("win32")
+	set guifont=Lucida_Console:h10:cANSI
+	exe 'cd C:\Users\' . $USERNAME
+else
+	set guifont=Ubuntu\ Mono\ 12
+endif
 set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
 set autoindent
