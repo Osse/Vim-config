@@ -75,8 +75,8 @@ noremap  o         o<Space><BS>
 noremap  O         O<Space><BS>
 noremap  ¤         $
 noremap  æ         ^
-noremap  :         .
-noremap  .         :
+" noremap  :         .
+" noremap  .         :
 noremap  <Leader>p "_ddP
 " AltGr + WASD er piler {{{
 inoremap ł         <Up>
