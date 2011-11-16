@@ -26,7 +26,7 @@ set nocompatible
 	Bundle 'Rip-Rip/clang_complete'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 	" Bundle 'mattsacks/vim-fuzzee'
-	" Bundle 'tpope/vim-repeat'
+	Bundle 'tpope/vim-repeat'
 " Vundle }}}
 
 " Vundle har gjort sitt
@@ -75,8 +75,8 @@ noremap  o         o<Space><BS>
 noremap  O         O<Space><BS>
 noremap  ¤         $
 noremap  æ         ^
-noremap  :         .
-noremap  .         :
+" noremap  :         .
+" noremap  .         :
 noremap  <Leader>p "_ddP
 " AltGr + WASD er piler {{{
 inoremap ł         <Up>
