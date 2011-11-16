@@ -26,7 +26,7 @@ set nocompatible
 	Bundle 'Rip-Rip/clang_complete'
 	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 	" Bundle 'mattsacks/vim-fuzzee'
-	" Bundle 'tpope/vim-repeat'
+	Bundle 'tpope/vim-repeat'
 " Vundle }}}
 
 " Vundle har gjort sitt
