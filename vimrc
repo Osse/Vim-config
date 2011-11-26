@@ -73,11 +73,12 @@ nnoremap <Space>   :nohlsearch<CR>
 map      Y         y$
 noremap  o         o<Space><BS>
 noremap  O         O<Space><BS>
+noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
 " noremap  :         .
 " noremap  .         :
-noremap  <Leader>p "_ddP
+noremap  <Leader>p "_ddP'[=']
 " AltGr + WASD er piler {{{
 inoremap ł         <Up>
 inoremap ª         <Left>
