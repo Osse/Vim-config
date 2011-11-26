@@ -24,9 +24,9 @@ colorscheme jellybeans
 augroup mingvimrc
 	autocmd! mingvimrc
 	" Går ut av insert mode når Gvim mister fokus
-	autocmd FocusLost * :stopinsert
+        autocmd FocusLost * if glob('<afile>') != '' | stopinsert | endif
 	" Saver alt når Gvim mister fokus
-	autocmd FocusLost * :wa 
+        autocmd FocusLost * if glob('<afile>') != '' | write | endif 
 	" Autosource gvimrc når de lagres
 	autocmd BufWritePost ~/.gvimrc source ~/.gvimrc
 augroup end
@@ -54,4 +54,4 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 " }}}
 
-" vim: foldmethod=marker foldlevel=1
+" vim: foldmethod=marker foldlevel=0

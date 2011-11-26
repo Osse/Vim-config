@@ -5,28 +5,28 @@
 
 set nocompatible
 " Start Vundle {{{
-	filetype plugin indent off 
-	set runtimepath+=~/.vim/bundle/vundle
-	if has("win32")
-		set runtimepath+=~/vimfiles/bundle/vundle
-		call vundle#rc('$HOME/vimfiles/bundle')
-	else
-		set runtimepath+=~/.vim/bundle/vundle
-		call vundle#rc()
-	endif
-	Bundle 'gmarik/vundle'
-	" Mine plugins:
-	Bundle 'tpope/vim-surround'
-	Bundle 'Lokaltog/vim-easymotion'
-	Bundle 'tomtom/tcomment_vim'
-	Bundle 'dahu/Insertlessly'
-	Bundle 'godlygeek/tabular'
-	Bundle 'rygwdn/ultisnips'
-	Bundle 'kien/ctrlp.vim'
-	Bundle 'Rip-Rip/clang_complete'
-	Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-	" Bundle 'mattsacks/vim-fuzzee'
-	Bundle 'tpope/vim-repeat'
+    filetype plugin indent off 
+    set runtimepath+=~/.vim/bundle/vundle
+    if has("win32")
+        set runtimepath+=~/vimfiles/bundle/vundle
+        call vundle#rc('$HOME/vimfiles/bundle')
+    else
+        set runtimepath+=~/.vim/bundle/vundle
+        call vundle#rc()
+    endif
+    Bundle 'gmarik/vundle'
+    " Mine plugins:
+    Bundle 'tpope/vim-surround'
+    Bundle 'Lokaltog/vim-easymotion'
+    Bundle 'tomtom/tcomment_vim'
+    Bundle 'dahu/Insertlessly'
+    Bundle 'godlygeek/tabular'
+    Bundle 'rygwdn/ultisnips'
+    Bundle 'kien/ctrlp.vim'
+    " Bundle 'Rip-Rip/clang_complete'
+    Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+    " Bundle 'mattsacks/vim-fuzzee'
+    Bundle 'tpope/vim-repeat'
 " Vundle }}}
 
 " Vundle har gjort sitt
@@ -36,10 +36,10 @@ runtime macros/matchit.vim
  
 " Options {{{
 if has("win32")
-	set guifont=Lucida_Console:h10:cANSI
-	exe 'cd C:\Users\' . $USERNAME
+    set guifont=Lucida_Console:h10:cANSI
+    exe 'cd C:\Users\' . $USERNAME
 else
-	set guifont=Ubuntu\ Mono\ 12
+    set guifont=Ubuntu\ Mono\ 12
 endif
 set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
@@ -47,12 +47,12 @@ set autoindent
 set mouse=a
 set iminsert=1            " For å kunne bruke lmap
 set imsearch=1            " For å kunne bruke lmap
-set linebreak
-set tabstop=4             " Tabs ser ut som 4 spaces
+set linebreak             " Velg fornuftig sted å bryte linjer
 set softtabstop=4         " Alltid tabs
 set shiftwidth=4          " Bare tabs
+set expandtab             " Extand tabs to spaces
 set foldmethod=syntax     " fold based on syntax by default
-set foldlevelstart=1
+set foldlevelstart=99     " Folds aldri lukket som standard
 set hlsearch              " Lyser opp skit
 set incsearch             " Søker etter hvert
 set showcmd               " Viser delkommandoer nede til høyre
@@ -67,6 +67,7 @@ set showbreak=>\
 " Diverse mappings {{{
 let mapleader="ø"
 let g:EasyMotion_leader_key = '<Leader>'
+nnoremap ZA        :qa<CR>
 nnoremap !         ?
 nnoremap S         /
 nnoremap <Space>   :nohlsearch<CR>
@@ -141,24 +142,24 @@ let g:tex_comment_nospell = 1
 
 " Oppretter/bruker en autcmd-gruppe som heter minvimrc {{{
 augroup minvimrc
-	autocmd! minvimrc
-	" Syntax for Arduino
-	autocmd BufNewFile,BufRead *.pde setf arduino
-	" Legger til : og _ som mulige characters i keywords i LaTeX
-	autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=_,:
-	" Autosource vimrc når den lagres
-	autocmd BufWritePost ~/.vimrc source ~/.vimrc
-	" Indentation settings at work
-	autocmd Filetype cpp if hostname() == 'osse-vb' | setl ts=8 sts=3 sw=3 et | endif
+    autocmd! minvimrc
+    " Syntax for Arduino
+    autocmd BufNewFile,BufRead *.pde setf arduino
+    " Legger til : og _ som mulige characters i keywords i LaTeX
+    autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=_,:
+    " Autosource vimrc når den lagres
+    autocmd BufWritePost ~/.vimrc source ~/.vimrc
+    " Indentation settings at work
+    autocmd Filetype cpp if hostname() == 'osse-vb' | setl ts=8 sts=3 sw=3 et | endif
 augroup end
 " }}}
 
 " Funksjon som skriver highlight group(s) til det under cursor {{{
 func! SynStack()
-	if !exists("*synstack")
-		return
-	endif
-	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 " }}}
 
