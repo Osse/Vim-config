@@ -23,7 +23,7 @@ set nocompatible
     Bundle 'godlygeek/tabular'
     Bundle 'rygwdn/ultisnips'
     Bundle 'kien/ctrlp.vim'
-    " Bundle 'Rip-Rip/clang_complete'
+    Bundle 'Rip-Rip/clang_complete'
     Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
     " Bundle 'mattsacks/vim-fuzzee'
     Bundle 'tpope/vim-repeat'
@@ -67,7 +67,6 @@ set showbreak=>\
 " Diverse mappings {{{
 let mapleader="ø"
 let g:EasyMotion_leader_key = '<Leader>'
-nnoremap ZA        :qa<CR>
 nnoremap !         ?
 nnoremap S         /
 nnoremap <Space>   :nohlsearch<CR>
@@ -77,8 +76,6 @@ noremap  O         O<Space><BS>
 noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
-" noremap  :         .
-" noremap  .         :
 noremap  <Leader>p "_ddP'[=']
 " AltGr + WASD er piler {{{
 inoremap ł         <Up>
@@ -94,7 +91,7 @@ noremap  Q         :CtrlPBuffer<CR>
 " noremap  Q         :LustyBufferExplorer<CR>
 vnoremap >         >gv
 vnoremap <         <gv
-" AltGr + rt /fg = {}[] {{{
+" AltGr + rt/fg = {}[] {{{
 lmap     ®         {
 lmap     þ         }
 lmap     đ         [
@@ -149,8 +146,6 @@ augroup minvimrc
     autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=_,:
     " Autosource vimrc når den lagres
     autocmd BufWritePost ~/.vimrc source ~/.vimrc
-    " Indentation settings at work
-    autocmd Filetype cpp if hostname() == 'osse-vb' | setl ts=8 sts=3 sw=3 et | endif
 augroup end
 " }}}
 
