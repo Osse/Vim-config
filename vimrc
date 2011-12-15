@@ -33,7 +33,7 @@ set nocompatible
 filetype plugin indent on
 syntax enable
 runtime macros/matchit.vim
-colorscheme molokai
+colorscheme jellybeans
 
 " Options {{{
 if has("win32")
