@@ -1,6 +1,6 @@
-" File: .vimrc
-" Author: Øystein Walle???
-" Description: Tradsj diverse settings?
+" File:          .vimrc
+" Author:        Øystein Walle???
+" Description:   Tradsj diverse settings?
 " Last Modified: July 1, 2011
 
 set nocompatible
@@ -33,7 +33,8 @@ set nocompatible
 filetype plugin indent on
 syntax enable
 runtime macros/matchit.vim
- 
+colorscheme molokai
+
 " Options {{{
 if has("win32")
     set guifont=Lucida_Console:h10:cANSI
@@ -87,8 +88,7 @@ noremap  ª         h
 noremap  ß         gj
 noremap  ð         l
 " }}}
-noremap  Q         :CtrlPBuffer<CR>
-" noremap  Q         :LustyBufferExplorer<CR>
+noremap  Q         :ls<Cr>:b 
 vnoremap >         >gv
 vnoremap <         <gv
 " AltGr + rt/fg = {}[] {{{
@@ -121,8 +121,8 @@ let g:clang_complete_copen  = 1
 let g:clang_complete_auto   = 0
 let g:clang_snippets        = 1
 let g:clang_snippets_engine = 'ultisnips'
-let g:clang_library_path    = '/usr/local/lib/'
-let g:clang_use_library = 1
+let g:clang_use_library = 0
+" let g:clang_library_path    = '/usr/local/lib/'
 " }}}
 
 " ctrlp settings {{{
