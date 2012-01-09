@@ -37,13 +37,6 @@ augroup end
 " set listchars=tab:⡁\ 
 " set list
 
-" Alt + WASD er piler {{{
-map <A-w> k
-map <A-a> h
-map <A-s> j
-map <A-d> l
-" }}}
-
 " Fikse Alt-problematikk
 set winaltkeys=no
 

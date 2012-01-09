@@ -1,0 +1,31 @@
+snippet h0 "Level 0 header (top level)" !b
+${1:Headline}
+${1/[^=]/=/g}
+$0
+endsnippet
+
+snippet h1 "Level 1 header" !b
+${1:Headline}
+${1/[^-]/-/g}
+$0
+endsnippet
+
+snippet h2 "Level 2 header" !b
+${1:Headline}
+${1/[^~]/~/g}
+$0
+endsnippet
+
+snippet h3 "Level 3 header" !b
+${1:Headline}
+${1/[^^]/^/g}
+$0
+endsnippet
+
+snippet h4 "Level 4 header (bottom level)" !b
+${1:Headline}
+${1/[^+]/+/g}
+$0
+endsnippet
+
+# vim:ft=snippets:

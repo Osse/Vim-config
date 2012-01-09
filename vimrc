@@ -1,11 +1,12 @@
 " File:          .vimrc
 " Author:        Øystein Walle???
 " Description:   Tradsj diverse settings?
-" Last Modified: July 1, 2011
+" Last Modified: Mon Jan 9 19:16:32 CET 2012
 
 set nocompatible
 " Start Vundle {{{
-    filetype plugin indent off 
+    filetype off
+    " filetype plugin indent off 
     set runtimepath+=~/.vim/bundle/vundle
     if has("win32")
         set runtimepath+=~/vimfiles/bundle/vundle
@@ -19,7 +20,7 @@ set nocompatible
     Bundle 'tpope/vim-surround'
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'tomtom/tcomment_vim'
-    Bundle 'dahu/Insertlessly'
+    " Bundle 'dahu/Insertlessly'
     Bundle 'godlygeek/tabular'
     Bundle 'rygwdn/ultisnips'
     Bundle 'kien/ctrlp.vim'
@@ -62,7 +63,9 @@ set wildmode=list:longest " Bash-like auto-completion
 set hidden                " Gjør det levelig med ulagrede buffers
 set nojoinspaces          " Lager ikke 70-talls mellomrom mellom setninger
 set completeopt-=preview
+set cinoptions+=(0,u0,g0
 set background=dark
+set t_Co=256
 set showbreak=>\ 
 " }}}
  
@@ -106,15 +109,19 @@ imap     <C-c>     <Esc>
 nnoremap c)        v)?[.!?]\+?s-1<CR>c
 nnoremap g)        )gE
 nnoremap g(        (gE
+nnoremap <C-Left>  <C-W><Left>
+nnoremap <C-Right> <C-W><Left>
+nnoremap <C-Down>  <C-W><Down>
+nnoremap <C-Up>    <C-W><Up>
 " }}}
 
 " Settings for UltiSnips {{{
-set rtp-=~/.vim/bundle/ultisnips " Dette fikser UltiSnips
-set rtp+=~/.vim/bundle/ultisnips,~/.vim/bundle/ultisnips/after
-let g:UltiSnipsSnippetDirectories = [hostname() == 'osse-vb' ? "work_snippets" : "osse_snippets", "UltiSnips"]
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
+let g:UltiSnipsSnippetDirectories = [hostname() == 'osse-vb' && hostname() == 'ow-linux' ?
+                                    \ "work_snippets" : "osse_snippets", "UltiSnips"]
+let g:UltiSnipsDontReverseSearchPath = "1"
+let g:UltiSnipsExpandTrigger         = "<tab>"
+let g:UltiSnipsJumpForwardTrigger    = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger   = "<c-tab>"
 " }}}
 
 " clang_complete settings {{{
