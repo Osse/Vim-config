@@ -65,6 +65,7 @@ set nojoinspaces          " Lager ikke 70-talls mellomrom mellom setninger
 set completeopt-=preview
 set cinoptions+=(0,u0,g0
 set background=dark
+set pastetoggle=<F4>
 set t_Co=256
 set showbreak=>\ 
 " }}}
@@ -113,6 +114,10 @@ nnoremap <C-Left>  <C-W><Left>
 nnoremap <C-Right> <C-W><Left>
 nnoremap <C-Down>  <C-W><Down>
 nnoremap <C-Up>    <C-W><Up>
+" Toggles and other stuff
+nnoremap <F1> :he 
+nnoremap <F2> :set invnumber<CR>
+nnoremap <F3> :set invrelativenumber<CR>
 " }}}
 
 " Settings for UltiSnips {{{
@@ -125,7 +130,7 @@ let g:UltiSnipsJumpBackwardTrigger   = "<c-tab>"
 " }}}
 
 " clang_complete settings {{{
-let g:clang_complete_copen  = 1
+let g:clang_complete_copen  = 0
 let g:clang_complete_auto   = 0
 let g:clang_snippets        = 1
 let g:clang_snippets_engine = 'ultisnips'
@@ -165,6 +170,8 @@ func! SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 " }}}
+
+" func! LineNoAwesomeness()
 
 " vim: foldmethod=marker foldlevel=0
 
