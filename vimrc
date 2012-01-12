@@ -111,7 +111,7 @@ nnoremap c)        v)?[.!?]\+?s-1<CR>c
 nnoremap g)        )gE
 nnoremap g(        (gE
 nnoremap <C-Left>  <C-W><Left>
-nnoremap <C-Right> <C-W><Left>
+nnoremap <C-Right> <C-W><Right>
 nnoremap <C-Down>  <C-W><Down>
 nnoremap <C-Up>    <C-W><Up>
 " Toggles and other stuff
