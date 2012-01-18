@@ -18,6 +18,7 @@ set nocompatible
     Bundle 'gmarik/vundle'
     " Mine plugins:
     Bundle 'tpope/vim-surround'
+    " Bundle 'paradigm/paramenu'
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'tomtom/tcomment_vim'
     " Bundle 'dahu/Insertlessly'
@@ -28,6 +29,7 @@ set nocompatible
     Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
     " Bundle 'mattsacks/vim-fuzzee'
     Bundle 'tpope/vim-repeat'
+    Bundle 'mileszs/ack.vim'
 " Vundle }}}
 
 " Vundle har gjort sitt
@@ -43,6 +45,10 @@ if has("win32")
 else
     set guifont=Ubuntu\ Mono\ 12
 endif
+set ruler
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set backspace=indent,eol,start
+set history=50
 set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
 set autoindent
@@ -73,6 +79,12 @@ set showbreak=>\
 " Diverse mappings {{{
 let mapleader="ø"
 let g:EasyMotion_leader_key = '<Leader>'
+nnoremap <Leader><Up>        :call EasyMotion#JK(0,1)<CR>
+nnoremap <Leader><Down>      :call EasyMotion#JK(0,0)<CR>
+onoremap <Leader><Up>        :call EasyMotion#JK(0,1)<CR>
+onoremap <Leader><Down>      :call EasyMotion#JK(0,0)<CR>
+vnoremap <Leader><Up>   :<C-U>call EasyMotion#JK(1,1)<CR>
+vnoremap <Leader><Down> :<C-U>call EasyMotion#JK(1,0)<CR>
 nnoremap !         ?
 nnoremap S         /
 nnoremap <Space>   :nohlsearch<CR>
