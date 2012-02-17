@@ -1,7 +1,7 @@
 " File:          .vimrc
 " Author:        Øystein Walle???
 " Description:   Tradsj diverse settings?
-" Last Modified: Mon Jan 9 19:16:32 CET 2012
+" Last Modified: Thu Feb 16 21:57:43 CET 2012
 
 set nocompatible
 " Start Vundle {{{
@@ -182,8 +182,6 @@ func! SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 " }}}
-
-" func! LineNoAwesomeness()
 
 " vim: foldmethod=marker foldlevel=0
 

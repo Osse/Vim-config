@@ -40,11 +40,4 @@ augroup end
 " Fikse Alt-problematikk
 set winaltkeys=no
 
-" Dette kan bli jævlig (flytte til .vimrc?) {{{
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-" }}}
-
 " vim: foldmethod=marker foldlevel=0
