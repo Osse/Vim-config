@@ -171,6 +171,7 @@ augroup minvimrc
     autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=_,:
     " Autosource vimrc når den lagres
     autocmd BufWritePost ~/.vimrc source ~/.vimrc
+    autocmd CmdwinEnter * nnoremap <buffer> <C-c> :q<CR>
 augroup end
 " }}}
 
