@@ -23,7 +23,7 @@ set nocompatible
     Bundle 'tomtom/tcomment_vim'
     " Bundle 'dahu/Insertlessly'
     Bundle 'godlygeek/tabular'
-    Bundle 'rygwdn/ultisnips'
+    Bundle 'SirVer/ultisnips'
     Bundle 'kien/ctrlp.vim'
     Bundle 'Rip-Rip/clang_complete'
     Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -79,12 +79,14 @@ set showbreak=>\
 " Diverse mappings {{{
 let mapleader="ø"
 let g:EasyMotion_leader_key = '<Leader>'
+" Stuff to make EasyMotion work with my keyboard layout {{{
 nnoremap <Leader><Up>        :call EasyMotion#JK(0,1)<CR>
 nnoremap <Leader><Down>      :call EasyMotion#JK(0,0)<CR>
 onoremap <Leader><Up>        :call EasyMotion#JK(0,1)<CR>
 onoremap <Leader><Down>      :call EasyMotion#JK(0,0)<CR>
 vnoremap <Leader><Up>   :<C-U>call EasyMotion#JK(1,1)<CR>
 vnoremap <Leader><Down> :<C-U>call EasyMotion#JK(1,0)<CR>
+" }}}
 nnoremap !         ?
 nnoremap S         /
 nnoremap <Space>   :nohlsearch<CR>
@@ -126,6 +128,10 @@ nnoremap <C-Left>  <C-W><Left>
 nnoremap <C-Right> <C-W><Right>
 nnoremap <C-Down>  <C-W><Down>
 nnoremap <C-Up>    <C-W><Up>
+nnoremap <Esc>O5D  <C-W><Left>
+nnoremap <Esc>O5C  <C-W><Right>
+nnoremap <Esc>O5B  <C-W><Down>
+nnoremap <Esc>O5A  <C-W><Up>
 " Toggles and other stuff
 nnoremap <F1> :he 
 nnoremap <F2> :set invnumber<CR>
@@ -136,9 +142,9 @@ nnoremap <F3> :set invrelativenumber<CR>
 let g:UltiSnipsSnippetDirectories = [hostname() == 'osse-vb' && hostname() == 'ow-linux' ?
                                     \ "work_snippets" : "osse_snippets", "UltiSnips"]
 let g:UltiSnipsDontReverseSearchPath = "1"
-let g:UltiSnipsExpandTrigger         = "<tab>"
-let g:UltiSnipsJumpForwardTrigger    = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger   = "<c-tab>"
+let g:UltiSnipsExpandTrigger         = "<Tab>"
+let g:UltiSnipsJumpForwardTrigger    = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger   = "<S-tab>"
 " }}}
 
 " clang_complete settings {{{
