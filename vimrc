@@ -23,7 +23,7 @@ set nocompatible
     Bundle 'tomtom/tcomment_vim'
     " Bundle 'dahu/Insertlessly'
     Bundle 'godlygeek/tabular'
-    Bundle 'rygwdn/ultisnips'
+    Bundle 'SirVer/ultisnips'
     Bundle 'kien/ctrlp.vim'
     Bundle 'Rip-Rip/clang_complete'
     Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -128,6 +128,10 @@ nnoremap <C-Left>  <C-W><Left>
 nnoremap <C-Right> <C-W><Right>
 nnoremap <C-Down>  <C-W><Down>
 nnoremap <C-Up>    <C-W><Up>
+nnoremap <Esc>O5D  <C-W><Left>
+nnoremap <Esc>O5C  <C-W><Right>
+nnoremap <Esc>O5B  <C-W><Down>
+nnoremap <Esc>O5A  <C-W><Up>
 " Toggles and other stuff
 nnoremap <F1> :he 
 nnoremap <F2> :set invnumber<CR>
