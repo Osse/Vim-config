@@ -20,11 +20,13 @@ set nocompatible
     Bundle 'tpope/vim-surround'
     " Bundle 'paradigm/paramenu'
     Bundle 'Lokaltog/vim-easymotion'
+    Bundle 'Raimondi/vim-buffalo'
+    Bundle 'dahu/vimple'
     Bundle 'tomtom/tcomment_vim'
     " Bundle 'dahu/Insertlessly'
     Bundle 'godlygeek/tabular'
     Bundle 'SirVer/ultisnips'
-    Bundle 'kien/ctrlp.vim'
+    " Bundle 'kien/ctrlp.vim'
     Bundle 'Rip-Rip/clang_complete'
     Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
     " Bundle 'mattsacks/vim-fuzzee'
@@ -74,6 +76,7 @@ set background=dark
 set pastetoggle=<F4>
 set t_Co=256
 set showbreak=>\ 
+set laststatus=2
 " }}}
  
 " Diverse mappings {{{
@@ -136,6 +139,8 @@ nnoremap <Esc>O5A  <C-W><Up>
 nnoremap <F1> :he 
 nnoremap <F2> :set invnumber<CR>
 nnoremap <F3> :set invrelativenumber<CR>
+nnoremap <F5> :set invlist<CR>
+nnoremap <F6> :set invspell<CR>
 " }}}
 
 " Settings for UltiSnips {{{
