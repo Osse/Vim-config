@@ -32,6 +32,7 @@ set nocompatible
     " Bundle 'mattsacks/vim-fuzzee'
     Bundle 'tpope/vim-repeat'
     Bundle 'mileszs/ack.vim'
+    Bundle 'tpope/vim-fugitive'
 " Vundle }}}
 
 " Vundle har gjort sitt
@@ -55,8 +56,6 @@ set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
 set autoindent
 set mouse=a
-" set iminsert=1            " For å kunne bruke lmap
-" set imsearch=1            " For å kunne bruke lmap
 set linebreak             " Velg fornuftig sted å bryte linjer
 set softtabstop=4         " Alltid tabs
 set shiftwidth=4          " Bare tabs
@@ -98,29 +97,9 @@ noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
 noremap  <Leader>p "_ddP'[=']
-" " AltGr + WASD er piler {{{
-" inoremap ł         <Up>
-" inoremap ª         <Left>
-" inoremap ß         <Down>
-" inoremap ð         <Right>
-" noremap  ł         gk
-" noremap  ª         h
-" noremap  ß         gj
-" noremap  ð         l
-" " }}}
 noremap  Q         :ls<Cr>:b 
 vnoremap >         >gv
 vnoremap <         <gv
-" " AltGr + rt/fg = {}[] {{{
-" lmap     ®         {
-" lmap     þ         }
-" lmap     đ         [
-" lmap     ŋ         ]
-" map      ®         {
-" map      þ         }
-" map      đ         [
-" map      ŋ         ]
-" " }}}
 imap     <C-c>     <Esc>
 nnoremap c)        v)?[.!?]\+?s-1<CR>c
 nnoremap g)        )gE
