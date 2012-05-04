@@ -94,8 +94,6 @@ nnoremap !         ?
 nnoremap S         /
 nnoremap <Space>   :nohlsearch<CR>
 map      Y         y$
-noremap  o         o<Space><BS>
-noremap  O         O<Space><BS>
 noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
