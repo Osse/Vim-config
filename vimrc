@@ -70,7 +70,7 @@ set wildmode=list:longest " Bash-like auto-completion
 set hidden                " Gjør det levelig med ulagrede buffers
 set nojoinspaces          " Lager ikke 70-talls mellomrom mellom setninger
 set completeopt-=preview
-set cinoptions+=(0,u0,g0
+set cinoptions+=(0,u0,g0,N-s
 set background=dark
 set pastetoggle=<F4>
 set t_Co=256
