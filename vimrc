@@ -73,9 +73,9 @@ set completeopt-=preview
 set cinoptions+=(0,u0,g0,N-s
 set background=dark
 set pastetoggle=<F4>
-set t_Co=256
 set showbreak=>\ 
 set laststatus=2
+set ttimeout ttimeoutlen=100
 " }}}
  
 " Diverse mappings {{{
