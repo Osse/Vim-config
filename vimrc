@@ -33,6 +33,7 @@ set nocompatible
     Bundle 'tpope/vim-repeat'
     Bundle 'mileszs/ack.vim'
     Bundle 'tpope/vim-fugitive'
+    Bundle 'nanotech/jellybeans.vim'
 " Vundle }}}
 
 " Vundle har gjort sitt
@@ -71,7 +72,6 @@ set hidden                " Gjør det levelig med ulagrede buffers
 set nojoinspaces          " Lager ikke 70-talls mellomrom mellom setninger
 set completeopt-=preview
 set cinoptions+=(0,u0,g0,N-s
-set background=dark
 set pastetoggle=<F4>
 set showbreak=>\ 
 set laststatus=2
