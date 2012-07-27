@@ -6,7 +6,7 @@
 set nocompatible
 " Start Vundle {{{
     filetype off
-    " filetype plugin indent off 
+    " filetype plugin indent off
     set runtimepath+=~/.vim/bundle/vundle
     if has("win32")
         set runtimepath+=~/vimfiles/bundle/vundle
@@ -77,7 +77,7 @@ set showbreak=>\
 set laststatus=2
 set ttimeout ttimeoutlen=100
 " }}}
- 
+
 " Diverse mappings {{{
 let mapleader="ø"
 let g:EasyMotion_leader_key = '<Leader>'
