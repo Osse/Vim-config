@@ -33,6 +33,7 @@ set nocompatible
     Bundle 'tpope/vim-repeat'
     Bundle 'mileszs/ack.vim'
     Bundle 'tpope/vim-fugitive'
+    Bundle 'Osse/double-tap'
     Bundle 'nanotech/jellybeans.vim'
 " Vundle }}}
 
