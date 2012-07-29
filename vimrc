@@ -162,8 +162,6 @@ augroup minvimrc
     autocmd! minvimrc
     " Syntax for Arduino
     autocmd BufNewFile,BufRead *.pde setf arduino
-    " Legger til : og _ som mulige characters i keywords i LaTeX
-    autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=_,:
     " Autosource vimrc når den lagres
     autocmd BufWritePost ~/.vimrc source ~/.vimrc
     autocmd CmdwinEnter * nnoremap <buffer> <C-c> :q<CR>
