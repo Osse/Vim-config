@@ -151,6 +151,12 @@ let g:tex_conceal = 'sgdm'
 let g:tex_comment_nospell = 1
 " }}}
 
+" PHP stuff from ftplugin/php.vim {{{
+let g:php_folding=2
+let php_htmlInString=1
+let php_sql_query=1
+" }}}
+
 " Oppretter/bruker en autcmd-gruppe som heter minvimrc {{{
 augroup minvimrc
     autocmd! minvimrc
