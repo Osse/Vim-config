@@ -12,9 +12,6 @@ endif
 set lines=50
 " }}}
 
-" Velger colorscheme
-colorscheme jellybeans
-
 " Akser hvor cursor er origo LOL!
 " set cursorline
 " set cursorcolumn
