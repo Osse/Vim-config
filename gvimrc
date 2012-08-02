@@ -1,7 +1,6 @@
 " File: .gvimrc
 " Author: Øystein Walle???
 " Description: Tradsj diverse settings?
-" Last Modified: July 1, 2011
 
 set guiheadroom=10
 " Setter størrelse på vinduet {{{
