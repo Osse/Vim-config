@@ -76,6 +76,7 @@ set pastetoggle=<F4>
 set showbreak=>\ 
 set laststatus=2
 set ttimeout ttimeoutlen=100
+set exrc
 " }}}
 
 " Diverse mappings {{{
