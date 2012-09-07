@@ -4,8 +4,5 @@
 #Ignore all the bundle directories
 bundle/*
 
-#Ignore pyc files in UltiSnips
-ultisnips_rep/plugin/UltiSnips/*.pyc
-
 #Ignore tags file because it is huge
 tags/tags
