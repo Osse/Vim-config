@@ -1,17 +1,17 @@
 Install it like this:
 
-$ rm -rf .vim/ .vimrc .gvimrc
 $ cd ~
-$ git clone [--recursive] git://github.com/Osse/Vim-config.git .vim
+$ rm -rf .vim/ .vimrc .gvimrc
+$ git clone git://github.com/Osse/Vim-config.git .vim
+$ git clone git://github.com/gmarik/vundle.git .vim/bundle/vundle
 
-The configuration files .vimrc and .gvimrc are located inside the .vim directory to making using the repo easier. To use them as your regular config files for Vim, set up links to them like this:
+The configuration files .vimrc and .gvimrc are located inside the .vim
+directory to making using the repo easier. To use them as your regular config
+files for Vim, set up links to them like this:
 
 $ cd ~
 $ ln -s .vim/vimrc .vimrgc
 $ ln -s .vim/gvimrc .gvimrc
 
-If '--recursive' was left out, install Vundle 'manually':
-
-$ git submodule update --init
-
-After that, run :BundleInstall from within Vim. This makes Vundle automatically install all the plugins listed in vimrc as 'bundles.'
+After that, run :BundleInstall from within Vim. This makes Vundle automatically
+install all the plugins listed in vimrc as 'bundles.'

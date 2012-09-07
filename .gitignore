@@ -1,10 +1,8 @@
 # Vim swap files are ignored
 .*.sw?
 
-#Ignore all the bundle directories except Vundle.
+#Ignore all the bundle directories
 bundle/*
-!bundle/vundle
-bundle/vundle/doc/tags
 
 #Ignore pyc files in UltiSnips
 ultisnips_rep/plugin/UltiSnips/*.pyc
