@@ -119,11 +119,13 @@ nnoremap <F2> :set invnumber<CR>
 nnoremap <F3> :set invrelativenumber<CR>
 nnoremap <F5> :set invlist<CR>
 nnoremap <F6> :set invspell<CR>
+nnoremap <F7> :set invwrap<CR>
 " }}}
 
 " Settings for UltiSnips {{{
-let g:UltiSnipsSnippetDirectories = [hostname() == 'osse-vb' && hostname() == 'ow-linux' ?
-                                    \ "work_snippets" : "osse_snippets", "UltiSnips"]
+let g:UltiSnipsSnippetDirectories =
+    \ [hostname() == 'osse-vb' && hostname() == 'ow-linux' ?
+    \ "work_snippets" : "osse_snippets", "UltiSnips"]
 let g:UltiSnipsDontReverseSearchPath = "1"
 let g:UltiSnipsExpandTrigger         = "<Tab>"
 let g:UltiSnipsJumpForwardTrigger    = "<Tab>"
@@ -176,4 +178,3 @@ endfunc
 " }}}
 
 " vim: foldmethod=marker foldlevel=0
-
