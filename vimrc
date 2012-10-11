@@ -98,7 +98,7 @@ noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
 noremap  <Leader>p "_ddP'[=']
-noremap  Q         :ls<Cr>:b 
+nmap <unique><silent> Q <Plug>BuffaloTrigger
 vnoremap >         >gv
 vnoremap <         <gv
 imap     <C-c>     <Esc>
