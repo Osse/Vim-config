@@ -40,7 +40,9 @@ set nocompatible
 filetype plugin indent on
 syntax enable
 runtime macros/matchit.vim
-colorscheme jellybeans
+if findfile('colors/jellybeans.vim', &rtp) != ""
+    colorscheme jellybeans
+endif
 
 " Options {{{
 if has("win32")
