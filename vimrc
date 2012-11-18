@@ -117,11 +117,11 @@ nnoremap <Esc>O5B  <C-W><Down>
 nnoremap <Esc>O5A  <C-W><Up>
 " Toggles and other stuff
 nnoremap <F1> :he 
-nnoremap <F2> :set invnumber<CR>
-nnoremap <F3> :set invrelativenumber<CR>
-nnoremap <F5> :set invlist<CR>
-nnoremap <F6> :set invspell<CR>
-nnoremap <F7> :set invwrap<CR>
+nnoremap <F2> :set invnumber number?<CR>
+nnoremap <F3> :set invrelativenumber relativenumber?<CR>
+nnoremap <F5> :set invlist list?<CR>
+nnoremap <F6> :set invspell spell?<CR>
+nnoremap <F7> :set invwrap wrap?<CR>
 " }}}
 
 " Settings for UltiSnips {{{
