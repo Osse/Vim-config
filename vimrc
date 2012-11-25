@@ -79,6 +79,7 @@ set showbreak=>\
 set laststatus=2
 set ttimeout ttimeoutlen=100
 set exrc
+set splitright
 " }}}
 
 " Diverse mappings {{{
@@ -123,6 +124,7 @@ nnoremap <F5> :set invlist list?<CR>
 nnoremap <F6> :set invspell spell?<CR>
 nnoremap <F7> :set invwrap wrap?<CR>
 " }}}
+nnoremap <C-W>] :vsplit<CR>:tag<CR>
 
 " Settings for UltiSnips {{{
 let g:UltiSnipsSnippetDirectories =
