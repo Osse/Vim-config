@@ -80,6 +80,7 @@ set laststatus=2
 set ttimeout ttimeoutlen=100
 set exrc
 set splitright
+set splitbelow
 " }}}
 
 " Diverse mappings {{{
