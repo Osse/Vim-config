@@ -58,7 +58,7 @@ set history=50
 set sessionoptions-=options,blank,winsize
 set sessionoptions+=winpos
 set autoindent
-set mouse=a
+" set mouse=a
 set linebreak             " Velg fornuftig sted å bryte linjer
 set softtabstop=4         " Alltid tabs
 set shiftwidth=4          " Bare tabs
