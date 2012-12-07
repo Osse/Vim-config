@@ -126,7 +126,7 @@ nnoremap <F7> :set invwrap wrap?<CR>
 
 " Settings for UltiSnips {{{
 let g:UltiSnipsSnippetDirectories =
-    \ [hostname() == 'osse-vb' && hostname() == 'ow-linux' ?
+    \ [hostname() == 'osse-vb' || hostname() == 'ow-linux' ?
     \ "work_snippets" : "osse_snippets", "UltiSnips"]
 let g:UltiSnipsDontReverseSearchPath = "1"
 let g:UltiSnipsExpandTrigger         = "<Tab>"
