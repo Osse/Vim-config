@@ -23,8 +23,6 @@ augroup mingvimrc
         autocmd FocusLost * if glob('<afile>') != '' | stopinsert | endif
 	" Saver alt når Gvim mister fokus
         autocmd FocusLost * if glob('<afile>') != '' | write | endif 
-	" Autosource gvimrc når de lagres
-	autocmd BufWritePost ~/.gvimrc source ~/.gvimrc
 augroup end
 " }}}
 
