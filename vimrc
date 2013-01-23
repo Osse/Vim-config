@@ -40,6 +40,10 @@ filetype plugin indent on
 syntax enable
 runtime macros/matchit.vim
 if findfile('colors/jellybeans.vim', &rtp) != ""
+    let g:jellybeans_overrides =  {
+                \ 'StatusLine': { 'attr': 'bold' },
+                \ 'StatusLineNC': { 'attr': 'bold' },
+                \ }
     colorscheme jellybeans
 endif
 
