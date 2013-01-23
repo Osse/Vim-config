@@ -17,9 +17,7 @@ set nocompatible
     Bundle 'gmarik/vundle'
     " Mine plugins:
     Bundle 'tpope/vim-surround'
-    " Bundle 'paradigm/paramenu'
     Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'Raimondi/vim-buffalo'
     Bundle 'dahu/vimple'
     Bundle 'tomtom/tcomment_vim'
     " Bundle 'dahu/Insertlessly'
@@ -34,6 +32,7 @@ set nocompatible
     Bundle 'tpope/vim-fugitive'
     Bundle 'Osse/double-tap'
     Bundle 'nanotech/jellybeans.vim'
+    Bundle 'paradigm/SkyBison'
 " Vundle }}}
 
 " Vundle har gjort sitt
@@ -102,7 +101,7 @@ noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
 noremap  <Leader>p "_ddP'[=']
-nmap <unique><silent> Q <Plug>BuffaloTrigger
+nnoremap Q 2:<C-U>call SkyBison("b ")<CR>
 vnoremap >         >gv
 vnoremap <         <gv
 imap     <C-c>     <Esc>
