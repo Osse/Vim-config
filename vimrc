@@ -4,16 +4,14 @@
 
 set nocompatible
 " Start Vundle {{{
-    filetype off
-    " filetype plugin indent off
-    set runtimepath+=~/.vim/bundle/vundle
-    if has("win32")
-        set runtimepath+=~/vimfiles/bundle/vundle
-        call vundle#rc('$HOME/vimfiles/bundle')
-    else
-        set runtimepath+=~/.vim/bundle/vundle
-        call vundle#rc()
-    endif
+filetype off
+let bundledir = '~/.vim/bundle'
+if has("win32")
+    let bundledir = substitute(bundledir, '\.vim', 'vimfiles', '')
+endif
+let &runtimepath .= ',' . bundledir . '/vundle'
+silent! call vundle#rc(bundledir)
+if exists(":Bundle")
     Bundle 'gmarik/vundle'
     " Mine plugins:
     Bundle 'tpope/vim-surround'
@@ -33,6 +31,7 @@ set nocompatible
     Bundle 'Osse/double-tap'
     Bundle 'nanotech/jellybeans.vim'
     Bundle 'paradigm/SkyBison'
+endif
 " Vundle }}}
 
 " Vundle har gjort sitt
