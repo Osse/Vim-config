@@ -6,6 +6,7 @@ set nocompatible
 " Start Vundle {{{
 filetype off
 if has("win32")
+    set encoding=utf-8
     set runtimepath^=~/.vim
     set runtimepath+=~/.vim/after
 endif
