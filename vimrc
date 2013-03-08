@@ -5,12 +5,12 @@
 set nocompatible
 " Start Vundle {{{
 filetype off
-let bundledir = '~/.vim/bundle'
 if has("win32")
-    let bundledir = substitute(bundledir, '\.vim', 'vimfiles', '')
+    set runtimepath^=~/.vim
+    set runtimepath+=~/.vim/after
 endif
-let &runtimepath .= ',' . bundledir . '/vundle'
-silent! call vundle#rc(bundledir)
+set runtimepath+=~/.vim/bundle/vundle
+silent! call vundle#rc()
 if exists(":Bundle")
     Bundle 'gmarik/vundle'
     " Mine plugins:
