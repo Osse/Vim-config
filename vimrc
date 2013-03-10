@@ -81,7 +81,6 @@ set pastetoggle=<F4>
 set showbreak=>\ 
 set laststatus=2
 set ttimeout ttimeoutlen=100
-set exrc
 set splitright
 set splitbelow
 " }}}
@@ -181,5 +180,9 @@ func! SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 " }}}
+
+for rc in findfile('.lvimrc', ';', -1)
+    execute 'source' rc
+endfor
 
 " vim: foldmethod=marker foldlevel=0
