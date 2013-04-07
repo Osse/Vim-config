@@ -43,6 +43,8 @@ if findfile('colors/jellybeans.vim', &rtp) != ""
     let g:jellybeans_overrides =  {
                 \ 'StatusLine': { 'attr': 'bold' },
                 \ 'StatusLineNC': { 'attr': 'bold' },
+                \ 'CursorLine': { 'guibg': '00ff00' },
+                \ 'CursorColumn': { 'guibg': '00ff00' },
                 \ }
     colorscheme jellybeans
 endif
@@ -190,5 +192,37 @@ endif
 for rc in findfile('.lvimrc', ';', -1)
     execute 'source' rc
 endfor
+
+" inspired by Blind Osse de Hashvim
+" Barry Arthur, February 2013
+
+function! OsseCursorBlindOn()
+  " let w:orig_cursorcolumn = &cursorcolumn
+  " let w:orig_cursorline = &cursorline
+  " extra heinous colour jizz here if desired
+  set cursorcolumn
+  set cursorline
+  augroup OsseCursorBlind
+    au!
+    au CursorHold * call OsseCursorBlindOff()
+    au CursorMoved * call OsseCursorBlindOff()
+  augroup END
+endfunction
+
+function! OsseCursorBlindOff()
+  " let &cursorcolumn = w:orig_cursorcolumn
+  " let &cursorline = w:orig_cursorline
+  set nocursorline
+  set nocursorcolumn
+  augroup OsseCursorBlind
+    au!
+  augroup END
+endfunction
+
+augroup OsseCursorBlind
+  au!
+augroup END
+
+nnoremap <F8> :call OsseCursorBlindOn()<cr>
 
 " vim: foldmethod=marker foldlevel=0
