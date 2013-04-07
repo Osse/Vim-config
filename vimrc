@@ -107,7 +107,6 @@ noremap  <Leader>p "_ddP'[=']
 nnoremap Q 2:<C-U>call SkyBison("b ")<CR>
 vnoremap >         >gv
 vnoremap <         <gv
-imap     <C-c>     <Esc>
 nnoremap c)        v)?[.!?]\+?s-1<CR>c
 nnoremap g)        )gE
 nnoremap g(        (gE
