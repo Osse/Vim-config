@@ -22,7 +22,7 @@ if exists(":Bundle")
     " Bundle 'dahu/Insertlessly'
     Bundle 'godlygeek/tabular'
     Bundle 'SirVer/ultisnips'
-    " Bundle 'kien/ctrlp.vim'
+    Bundle 'kien/ctrlp.vim'
     Bundle 'Rip-Rip/clang_complete'
     Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
     " Bundle 'mattsacks/vim-fuzzee'
@@ -144,8 +144,9 @@ let g:clang_use_library = 1
 " }}}
 
 " ctrlp settings {{{
-let g:ctrlp_persistence_input = 0
 let g:ctrlp_by_filename = 0
+set wildignore+=*.d,*.o
+let g:ctrlp_extensions = [ 'tag' ]
 " }}}
 
 " Noe LaTeX-reier {{{
