@@ -129,9 +129,6 @@ nnoremap <F7> :set invwrap wrap?<CR>
 nnoremap <C-W>] :vsplit<CR>:tag<CR>
 
 " Settings for UltiSnips {{{
-let g:UltiSnipsSnippetDirectories =
-    \ [hostname() == 'osse-vb' || hostname() == 'ow-linux' ?
-    \ "work_snippets" : "osse_snippets", "UltiSnips"]
 let g:UltiSnipsDontReverseSearchPath = "1"
 let g:UltiSnipsExpandTrigger         = "<Tab>"
 let g:UltiSnipsJumpForwardTrigger    = "<Tab>"
@@ -178,6 +175,15 @@ func! SynStack()
     endif
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+" }}}
+
+" Hostname-specific settings {{{
+if hostname() == 'ow-linux'
+    let g:clang_library_path = '/localhome/ow/usr/lib'
+    let g:UltiSnipsSnippetDirectories = [ "work_snippets", "UltiSnips"]
+else
+    let g:UltiSnipsSnippetDirectories = [ "osse_snippets", "UltiSnips"]
+endif
 " }}}
 
 for rc in findfile('.lvimrc', ';', -1)
