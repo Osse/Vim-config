@@ -198,6 +198,8 @@ for rc in findfile('.lvimrc', ';', -1)
     execute 'source' rc
 endfor
 
+" OsseCursorBlind {{{
+" grabbed from https://gist.github.com/dahu/5003452
 " inspired by Blind Osse de Hashvim
 " Barry Arthur, February 2013
 
@@ -229,5 +231,6 @@ augroup OsseCursorBlind
 augroup END
 
 nnoremap <F8> :call OsseCursorBlindOn()<cr>
+" }}}
 
 " vim: foldmethod=marker foldlevel=0
