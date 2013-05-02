@@ -32,6 +32,7 @@ if exists(":Bundle")
     Bundle 'Osse/double-tap'
     Bundle 'nanotech/jellybeans.vim'
     Bundle 'paradigm/SkyBison'
+    Bundle 'mhinz/vim-startify'
 endif
 " Vundle }}}
 
