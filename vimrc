@@ -131,6 +131,8 @@ nnoremap <F6> :set invspell spell?<CR>
 nnoremap <F7> :set invwrap wrap?<CR>
 " }}}
 nnoremap <C-W>] :vsplit<CR>:tag<CR>
+nnoremap ' `
+nnoremap ` '
 "}}}
 
 " Settings for UltiSnips {{{
