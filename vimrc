@@ -86,6 +86,7 @@ set laststatus=2
 set ttimeout ttimeoutlen=100
 set splitright
 set splitbelow
+set nowrap
 " }}}
 
 " Diverse mappings {{{
