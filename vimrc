@@ -122,7 +122,7 @@ nnoremap <Esc>O5D  <C-W><Left>
 nnoremap <Esc>O5C  <C-W><Right>
 nnoremap <Esc>O5B  <C-W><Down>
 nnoremap <Esc>O5A  <C-W><Up>
-" Toggles and other stuff
+" Toggles and other stuff {{{
 nnoremap <F1> :he 
 nnoremap <F2> :set invnumber number?<CR>
 nnoremap <F3> :set invrelativenumber relativenumber?<CR>
@@ -131,6 +131,7 @@ nnoremap <F6> :set invspell spell?<CR>
 nnoremap <F7> :set invwrap wrap?<CR>
 " }}}
 nnoremap <C-W>] :vsplit<CR>:tag<CR>
+"}}}
 
 " Settings for UltiSnips {{{
 let g:UltiSnipsDontReverseSearchPath = "1"
