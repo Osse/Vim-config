@@ -87,6 +87,7 @@ set ttimeout ttimeoutlen=100
 set splitright
 set splitbelow
 set nowrap
+set scrolloff=5
 " }}}
 
 " Diverse mappings {{{
