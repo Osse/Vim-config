@@ -3,6 +3,9 @@
 " Description: Tradsj diverse settings?
 
 set guiheadroom=10
+set guioptions-=m
+set guioptions-=T
+
 " Setter størrelse på vinduet {{{
 if &diff
 	set co=160
