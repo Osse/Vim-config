@@ -108,7 +108,7 @@ map      Y         y$
 noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
-noremap  <Leader>p "_ddP'[=']
+noremap  <Leader>p p=']
 nnoremap Q 2:<C-U>call SkyBison("b ")<CR>
 vnoremap >         >gv
 vnoremap <         <gv
