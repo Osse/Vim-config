@@ -22,10 +22,6 @@ set lines=50
 " Oppretter/bruker en autcmd-gruppe som heter mingvimrc" {{{
 augroup mingvimrc
 	autocmd! mingvimrc
-	" Går ut av insert mode når Gvim mister fokus
-        autocmd FocusLost * if glob('<afile>') != '' | stopinsert | endif
-	" Saver alt når Gvim mister fokus
-        autocmd FocusLost * if glob('<afile>') != '' | write | endif 
 augroup end
 " }}}
 
