@@ -139,6 +139,7 @@ nnoremap <F7> :set invwrap wrap?<CR>
 nnoremap <C-W>] :vsplit<CR>:tag<CR>
 nnoremap ' `
 nnoremap ` '
+nnoremap <leader>q gqap
 "}}}
 
 " Settings for UltiSnips {{{
