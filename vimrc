@@ -88,6 +88,11 @@ set splitright
 set splitbelow
 set nowrap
 set scrolloff=5
+set undofile
+set undodir=~/.vim/undodir
+if ! isdirectory(expand("~/.vim/undodir"))
+    call mkdir(expand("~/.vim/undodir"),"p",0700)
+endif
 " }}}
 
 " Diverse mappings {{{

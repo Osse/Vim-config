@@ -6,3 +6,6 @@ bundle/*
 
 #Ignore tags file because it is huge
 tags/tags
+
+# ignore the undodir
+/undodir
