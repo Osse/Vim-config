@@ -44,8 +44,6 @@ if findfile('colors/jellybeans.vim', &rtp) != ""
     let g:jellybeans_overrides =  {
                 \ 'StatusLine': { 'attr': 'bold' },
                 \ 'StatusLineNC': { 'attr': 'bold' },
-                \ 'CursorLine': { 'guibg': '00ff00' },
-                \ 'CursorColumn': { 'guibg': '00ff00' },
                 \ }
     colorscheme jellybeans
 endif
@@ -211,9 +209,10 @@ endfor
 " Barry Arthur, February 2013
 
 function! OsseCursorBlindOn()
-  " let w:orig_cursorcolumn = &cursorcolumn
-  " let w:orig_cursorline = &cursorline
   " extra heinous colour jizz here if desired
+  " Oh indeed
+  hi CursorLine ctermbg=2
+  hi CursorColumn ctermbg=2
   set cursorcolumn
   set cursorline
   augroup OsseCursorBlind
@@ -224,10 +223,10 @@ function! OsseCursorBlindOn()
 endfunction
 
 function! OsseCursorBlindOff()
-  " let &cursorcolumn = w:orig_cursorcolumn
-  " let &cursorline = w:orig_cursorline
   set nocursorline
   set nocursorcolumn
+  " hack to force reloading of the colorscheme
+  let &bg = &bg
   augroup OsseCursorBlind
     au!
   augroup END
