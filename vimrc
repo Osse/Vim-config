@@ -201,7 +201,9 @@ endif
 " }}}
 
 for rc in findfile('.lvimrc', ';', -1)
+    let path = fnamemodify(rc, ':h')
     execute 'source' rc
+    unlet path
 endfor
 
 " OsseCursorBlind {{{
