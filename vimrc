@@ -113,7 +113,7 @@ noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
 noremap  <Leader>p p=']
-nnoremap Q 2:<C-U>call SkyBison("b ")<CR>
+nnoremap Q :CtrlPBuffer<CR>
 vnoremap >         >gv
 vnoremap <         <gv
 nnoremap c)        v)?[.!?]\+?s-1<CR>c
