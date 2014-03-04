@@ -107,7 +107,7 @@ vnoremap <Leader><Down> :<C-U>call EasyMotion#JK(1,0)<CR>
 " }}}
 nnoremap !         ?
 nnoremap S         /
-nnoremap <Space>   :nohlsearch<CR>
+nnoremap <Space>   <C-W><C-W>
 map      Y         y$
 noremap  ZA        :qa!<CR>
 noremap  ¤         $
@@ -134,8 +134,10 @@ nnoremap <F3> :set invrelativenumber relativenumber?<CR>
 nnoremap <F5> :set invlist list?<CR>
 nnoremap <F6> :set invspell spell?<CR>
 nnoremap <F7> :set invwrap wrap?<CR>
+nnoremap <silent> <F9> :wall <Bar> make<CR><CR><CR>:botright cwindow<CR>
 " }}}
 nnoremap <C-W>] :vsplit<CR>:tag<CR>
+nnoremap <silent> <C-l> :noh<CR><C-l>
 nnoremap ' `
 nnoremap ` '
 nnoremap <leader>q gqap
@@ -154,6 +156,8 @@ let g:clang_complete_auto   = 0
 let g:clang_snippets        = 1
 let g:clang_snippets_engine = 'ultisnips'
 let g:clang_use_library = 1
+let g:clang_jumpto_declaration_key = 'sdfasdfadsfs'
+let g:clang_jumpto_back_key = 'sdfasdfadsfs'
 " }}}
 
 " ctrlp settings {{{
