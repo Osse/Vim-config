@@ -158,6 +158,7 @@ let g:clang_use_library = 1
 
 " ctrlp settings {{{
 let g:ctrlp_by_filename = 0
+let g:ctrlp_reuse_window = 'netrw\|startify'
 set wildignore+=*.d,*.o
 let g:ctrlp_extensions = [ 'tag' ]
 " }}}
@@ -169,6 +170,10 @@ let g:tex_conceal = 'sgdm'
 let g:tex_comment_nospell = 1
 " }}}
 
+" Startify {{{
+let g:startify_relative_path = 1
+" }}}
+"
 " PHP stuff from ftplugin/php.vim {{{
 let g:php_folding=2
 let php_htmlInString=1
