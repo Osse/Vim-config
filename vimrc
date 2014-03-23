@@ -22,6 +22,7 @@ if exists(":Bundle")
     " Bundle 'dahu/Insertlessly'
     Bundle 'godlygeek/tabular'
     Bundle 'SirVer/ultisnips'
+    Bundle 'honza/vim-snippets'
     Bundle 'kien/ctrlp.vim'
     Bundle 'Rip-Rip/clang_complete'
     Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
