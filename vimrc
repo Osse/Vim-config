@@ -52,7 +52,7 @@ endif
 " Options {{{
 if has("win32")
     set guifont=Lucida_Console:h10:cANSI
-    exe 'cd C:\Users\' . $USERNAME
+    cd $HOME " To avoid starting it the location of the binary
 else
     set guifont=Ubuntu\ Mono\ 12
 endif
