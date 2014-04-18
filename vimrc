@@ -149,6 +149,7 @@ let g:UltiSnipsDontReverseSearchPath = "1"
 let g:UltiSnipsExpandTrigger         = "<Tab>"
 let g:UltiSnipsJumpForwardTrigger    = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger   = "<S-tab>"
+let g:UltiSnipsSnippetDirectories = [ "osse_snippets", "UltiSnips"]
 " }}}
 
 " clang_complete settings {{{
@@ -199,15 +200,6 @@ func! SynStack()
     endif
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-" }}}
-
-" Hostname-specific settings {{{
-if hostname() == 'ow-linux'
-    let g:clang_library_path = '/localhome/ow/usr/lib'
-    let g:UltiSnipsSnippetDirectories = [ "work_snippets", "UltiSnips"]
-else
-    let g:UltiSnipsSnippetDirectories = [ "osse_snippets", "UltiSnips"]
-endif
 " }}}
 
 for rc in findfile('.lvimrc', ';', -1)
