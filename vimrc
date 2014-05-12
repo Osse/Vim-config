@@ -11,7 +11,7 @@ if has("win32")
     set runtimepath+=~/.vim/after
 endif
 set runtimepath+=~/.vim/bundle/vundle
-silent! call vundle#rc()
+silent! call vundle#begin()
 if exists(":Bundle")
     Bundle 'gmarik/vundle'
     " Mine plugins:
@@ -35,6 +35,7 @@ if exists(":Bundle")
     Bundle 'paradigm/SkyBison'
     Bundle 'mhinz/vim-startify'
 endif
+silent! call vundle#end()
 " Vundle }}}
 
 " Vundle har gjort sitt
