@@ -10,30 +10,26 @@ if has("win32")
     set runtimepath^=~/.vim
     set runtimepath+=~/.vim/after
 endif
-set runtimepath+=~/.vim/bundle/vundle
+set runtimepath+=~/.vim/bundle/Vundle.vim
 silent! call vundle#begin()
-if exists(":Bundle")
-    Bundle 'gmarik/vundle'
+if exists(":Plugin")
+    Plugin 'gmarik/Vundle.vim'
     " Mine plugins:
-    Bundle 'tpope/vim-surround'
-    Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'dahu/vimple'
-    Bundle 'tomtom/tcomment_vim'
-    " Bundle 'dahu/Insertlessly'
-    Bundle 'godlygeek/tabular'
-    Bundle 'SirVer/ultisnips'
-    Bundle 'honza/vim-snippets'
-    Bundle 'kien/ctrlp.vim'
-    Bundle 'Rip-Rip/clang_complete'
-    Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-    " Bundle 'mattsacks/vim-fuzzee'
-    Bundle 'tpope/vim-repeat'
-    Bundle 'mileszs/ack.vim'
-    Bundle 'tpope/vim-fugitive'
-    Bundle 'Osse/double-tap'
-    Bundle 'nanotech/jellybeans.vim'
-    Bundle 'paradigm/SkyBison'
-    Bundle 'mhinz/vim-startify'
+    Plugin 'tpope/vim-surround'
+    Plugin 'Lokaltog/vim-easymotion'
+    Plugin 'dahu/vimple'
+    Plugin 'tomtom/tcomment_vim'
+    Plugin 'godlygeek/tabular'
+    Plugin 'SirVer/ultisnips'
+    Plugin 'honza/vim-snippets'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'Rip-Rip/clang_complete'
+    Plugin 'tpope/vim-repeat'
+    Plugin 'mileszs/ack.vim'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'Osse/double-tap'
+    Plugin 'nanotech/jellybeans.vim'
+    Plugin 'mhinz/vim-startify'
 endif
 silent! call vundle#end()
 " Vundle }}}
