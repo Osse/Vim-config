@@ -199,7 +199,8 @@ func! SynStack()
 endfunc
 " }}}
 
-for rc in findfile('.lvimrc', ';', -1)
+let gitlvimrc = findfile('.git/lvimrc', ';')
+for rc in findfile('.lvimrc', ';', -1) + (gitlvimrc != "" ? [gitlvimrc] : [])
     let path = fnamemodify(rc, ':h')
     execute 'source' rc
     unlet path
