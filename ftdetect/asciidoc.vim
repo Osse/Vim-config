@@ -47,7 +47,7 @@ function! s:FTasciidoc()
   if len < len(line) - 3 || len > len(line) + 3
     return
   endif
-  setfiletype asciidoc
+  set filetype=asciidoc
 endfunction
 
 " vim: et sw=2 ts=2 sts=2:
