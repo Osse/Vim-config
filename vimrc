@@ -195,6 +195,7 @@ let php_sql_query=1
 augroup minvimrc
     autocmd! minvimrc
     autocmd CmdwinEnter * nnoremap <buffer> <C-c> :q<CR>
+    autocmd Filetype asciidoc setlocal makeprg=asciidoc\ %
 augroup end
 " }}}
 
