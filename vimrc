@@ -209,8 +209,8 @@ endfunc
 " }}}
 
 let gitlvimrc = findfile('.git/lvimrc', ';')
-for rc in findfile('.lvimrc', ';', -1) + (gitlvimrc != "" ? [gitlvimrc] : [])
-    let path = fnamemodify(rc, ':h')
+for rc in findfile('.lvimrc', ';', -1) + (gitlvimrc != "" ? [fnamemodify(gitlvimrc, ':p')] : [])
+    let path = substitute(rc, '/\(.git/lvimrc\|.lvimrc\)$', '', '')
     execute 'source' rc
     unlet path
 endfor
