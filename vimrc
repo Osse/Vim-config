@@ -175,7 +175,7 @@ let g:tex_comment_nospell = 1
 
 " Startify {{{
 let g:startify_relative_path = 1
-let g:startify_skiplist = [ 'COMMIT_EDITMSG$', '\('.$VIMRUNTIME.'\|bundle/.*\)/doc/.*\.txt$' ]
+let g:startify_skiplist = [ 'COMMIT_EDITMSG$', '\('.escape($VIMRUNTIME, '\').'\|bundle/.*\)/doc/.*\.txt$' ]
 " }}}
 "
 " PHP stuff from ftplugin/php.vim {{{
