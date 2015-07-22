@@ -90,6 +90,7 @@ if ! isdirectory(expand("~/.vim/undodir"))
     call mkdir(expand("~/.vim/undodir"),"p",0700)
 endif
 set switchbuf=useopen
+set cmdheight=2
 " }}}
 
 " Diverse mappings {{{
