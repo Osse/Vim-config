@@ -1,8 +1,9 @@
 # Vim swap files are ignored
 .*.sw?
 
-#Ignore all the bundle directories
-bundle/*
+#Ignore Plug and the plugins themselves
+/autoload/plug.vim
+/plugged/
 
 #Ignore tags file because it is huge
 tags/tags

@@ -3,38 +3,36 @@
 " Description:   Tradsj diverse settings?
 
 set nocompatible
-" Start Vundle {{{
 filetype off
 if has("win32")
     set encoding=utf-8
     set runtimepath^=~/.vim
     set runtimepath+=~/.vim/after
 endif
-set runtimepath+=~/.vim/bundle/Vundle.vim
-silent! call vundle#begin()
-if exists(":Plugin")
-    Plugin 'gmarik/Vundle.vim'
-    " Mine plugins:
-    Plugin 'tpope/vim-surround'
-    Plugin 'Lokaltog/vim-easymotion'
-    Plugin 'dahu/vimple'
-    Plugin 'tomtom/tcomment_vim'
-    Plugin 'godlygeek/tabular'
-    Plugin 'SirVer/ultisnips'
-    Plugin 'honza/vim-snippets'
-    Plugin 'kien/ctrlp.vim'
-    Plugin 'Rip-Rip/clang_complete'
-    Plugin 'tpope/vim-repeat'
-    Plugin 'mileszs/ack.vim'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'Osse/double-tap'
-    Plugin 'nanotech/jellybeans.vim'
-    Plugin 'mhinz/vim-startify'
-endif
-silent! call vundle#end()
-" Vundle }}}
 
-" Vundle har gjort sitt
+" Start Plug {{{
+let g:plug_shallow = 0
+silent! call plug#begin()
+if exists(":Plug")
+    Plug 'tpope/vim-surround'
+    Plug 'Lokaltog/vim-easymotion'
+    Plug 'dahu/vimple'
+    Plug 'tomtom/tcomment_vim'
+    Plug 'godlygeek/tabular'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'kien/ctrlp.vim'
+    Plug 'Rip-Rip/clang_complete'
+    Plug 'tpope/vim-repeat'
+    Plug 'mileszs/ack.vim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'Osse/double-tap'
+    Plug 'nanotech/jellybeans.vim'
+    Plug 'mhinz/vim-startify'
+endif
+silent! call plug#end()
+" }}}
+
 filetype plugin indent on
 syntax enable
 runtime macros/matchit.vim
