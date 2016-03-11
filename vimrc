@@ -29,6 +29,7 @@ if exists(":Plug")
     Plug 'Osse/double-tap'
     Plug 'nanotech/jellybeans.vim'
     Plug 'mhinz/vim-startify'
+    Plug 'PotatoesMaster/i3-vim-syntax'
 endif
 silent! call plug#end()
 " }}}
@@ -175,6 +176,13 @@ let g:tex_comment_nospell = 1
 " Startify {{{
 let g:startify_relative_path = 1
 let g:startify_skiplist = [ 'COMMIT_EDITMSG$', '\('.escape($VIMRUNTIME, '\').'\|bundle/.*\)/doc/.*\.txt$' ]
+let g:startify_bookmarks = [
+            \ { 'm': '~/.vim/vimrc' },
+            \ { 'i': '~/.i3/config' },
+            \ { 'z': '~/.zshrc' },
+            \ { 'b': '~/.bashrc' },
+            \ { 'g': '~/.gitconfig' },
+            \ ]
 " }}}
 "
 " PHP stuff from ftplugin/php.vim {{{
