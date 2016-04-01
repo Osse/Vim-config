@@ -162,6 +162,7 @@ let g:clang_jumpto_back_key = 'sdfasdfadsfs'
 " ctrlp settings {{{
 let g:ctrlp_by_filename = 0
 let g:ctrlp_reuse_window = 'netrw\|startify'
+let g:ctrlp_user_command = ['.git', 'git -C %s ls-files']
 set wildignore+=*.d,*.o
 let g:ctrlp_extensions = [ 'tag' ]
 " }}}
@@ -194,8 +195,10 @@ let php_sql_query=1
 " Oppretter/bruker en autcmd-gruppe som heter minvimrc {{{
 augroup minvimrc
     autocmd! minvimrc
-    autocmd CmdwinEnter * nnoremap <buffer> <C-c> :q<CR>
+    autocmd CmdwinEnter * nnoremap <buffer> q :q<CR>
     autocmd Filetype asciidoc setlocal makeprg=asciidoc\ %
+    autocmd QuickFixCmdPost * cwindow
+    autocmd Filetype qf nnoremap <buffer> q :q<CR>
 augroup end
 " }}}
 
