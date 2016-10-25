@@ -163,6 +163,9 @@ let g:clang_jumpto_back_key = 'sdfasdfadsfs'
 let g:ctrlp_by_filename = 0
 let g:ctrlp_reuse_window = 'netrw\|startify'
 let g:ctrlp_user_command = ['.git', 'git -C %s ls-files']
+let g:ctrlp_custom_ignore = {
+            \ 'dir': '\(\.git\|build\)$'
+            \ }
 set wildignore+=*.d,*.o
 let g:ctrlp_extensions = [ 'tag' ]
 " }}}
