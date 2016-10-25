@@ -184,6 +184,8 @@ let g:startify_bookmarks = [
             \ { 'b': '~/.bashrc' },
             \ { 'g': '~/.gitconfig' },
             \ ]
+let g:startify_change_to_dir = 0
+let g:startify_change_to_vcs_root = 1
 " }}}
 "
 " PHP stuff from ftplugin/php.vim {{{
