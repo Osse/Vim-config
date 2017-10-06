@@ -212,6 +212,7 @@ augroup minvimrc
     autocmd Filetype asciidoc setlocal makeprg=asciidoc\ %
     autocmd QuickFixCmdPost * cwindow
     autocmd Filetype qf nnoremap <buffer> q :q<CR>
+    autocmd BufRead /tmp/bash-* let b:is_bash = 1 | set filetype=sh
 augroup end
 " }}}
 
