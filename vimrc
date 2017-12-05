@@ -21,8 +21,7 @@ if exists(":Plug")
     Plug 'godlygeek/tabular'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
+    Plug 'kien/ctrlp.vim'
     Plug 'Rip-Rip/clang_complete'
     Plug 'tpope/vim-repeat'
     Plug 'mileszs/ack.vim'
@@ -116,7 +115,7 @@ noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
 noremap  <Leader>p p=']
-nnoremap Q :Buffers<CR>
+nnoremap Q :CtrlPBuffer<CR>
 vnoremap >         >gv
 vnoremap <         <gv
 nnoremap c)        v)?[.!?]\+?s-1<CR>c
@@ -164,18 +163,15 @@ let g:clang_jumpto_declaration_key = 'sdfasdfadsfs'
 let g:clang_jumpto_back_key = 'sdfasdfadsfs'
 " }}}
 
-" FZF wrapper to combine Files and GitFiles {{{
-command! -bang -nargs=? MyFiles call MyFiles(<q-args>, <bang>0)
-nnoremap <C-P> :<C-U>MyFiles<CR>
-
-function! MyFiles(...)
-  call system('git rev-parse --show-toplevel')
-  if (v:shell_error)
-      call call('fzf#vim#files', a:000)
-  else
-      call call('fzf#vim#gitfiles', a:000)
-  endif
-endfunction
+" ctrlp settings {{{
+let g:ctrlp_by_filename = 0
+let g:ctrlp_reuse_window = 'netrw\|startify'
+let g:ctrlp_user_command = ['.git', 'git -C %s ls-files']
+let g:ctrlp_custom_ignore = {
+            \ 'dir': '\(\.git\|build\)$'
+            \ }
+set wildignore+=*.d,*.o
+let g:ctrlp_extensions = [ 'tag' ]
 " }}}
 
 " Noe LaTeX-reier {{{
