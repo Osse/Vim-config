@@ -1,4 +1,4 @@
-" File:          .vimrc
+" stsFile:          .vimrc
 " Author:        Øystein Walle???
 " Description:   Tradsj diverse settings?
 
@@ -19,14 +19,15 @@ if exists(":Plug")
     Plug 'dahu/vimple'
     Plug 'tomtom/tcomment_vim'
     Plug 'godlygeek/tabular'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
+    "Plug 'SirVer/ultisnips'
+    "Plug 'honza/vim-snippets'
     Plug 'kien/ctrlp.vim'
-    Plug 'Rip-Rip/clang_complete'
+    "Plug 'Rip-Rip/clang_complete'
     Plug 'tpope/vim-repeat'
     Plug 'mileszs/ack.vim'
     Plug 'tpope/vim-fugitive'
     Plug 'Osse/double-tap'
+    Plug 'Osse/vim-cmake-completion'
     Plug 'nanotech/jellybeans.vim'
     Plug 'mhinz/vim-startify'
     Plug 'PotatoesMaster/i3-vim-syntax'
@@ -77,7 +78,7 @@ set completeopt-=preview
 set cinoptions+=(0,u0,g0,N-s
 set pastetoggle=<F4>
 set showbreak=>\ 
-set laststatus=2
+set laststatus=0
 set ttimeout ttimeoutlen=100
 set splitright
 set splitbelow
@@ -93,7 +94,7 @@ if ! isdirectory(expand("~/.vim/undo"))
     call mkdir(expand("~/.vim/undo"),"p",0700)
 endif
 set switchbuf=useopen
-set cmdheight=2
+set cmdheight=1
 " }}}
 
 " Diverse mappings {{{
@@ -161,6 +162,7 @@ let g:clang_snippets_engine = 'ultisnips'
 let g:clang_use_library = 1
 let g:clang_jumpto_declaration_key = 'sdfasdfadsfs'
 let g:clang_jumpto_back_key = 'sdfasdfadsfs'
+let g:clang_library_path = '/c/Program Files/LLVM/bin'
 " }}}
 
 " ctrlp settings {{{
