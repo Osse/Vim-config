@@ -19,7 +19,12 @@ if exists(":Plug")
     Plug 'godlygeek/tabular'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    Plug 'srstevenson/vim-picker'
+    if empty($MSYSTEM)
+        Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+        Plug 'junegunn/fzf.vim'
+    else
+        Plug 'srstevenson/vim-picker'
+    endif
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-fugitive'
     Plug 'Osse/double-tap'
@@ -141,6 +146,22 @@ let g:UltiSnipsExpandTrigger         = "<Tab>"
 let g:UltiSnipsJumpForwardTrigger    = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger   = "<S-tab>"
 let g:UltiSnipsSnippetDirectories = [ "osse_snippets", "UltiSnips"]
+" }}}
+
+" FZF wrapper to combine Files and GitFiles {{{
+if empty($MSYSTEM)
+    command! -bang -nargs=? MyFiles call MyFiles(<q-args>, <bang>0)
+    nnoremap <C-P> :<C-U>MyFiles<CR>
+
+    function! MyFiles(...)
+      call system('git rev-parse --show-toplevel')
+      if (v:shell_error)
+          call call('fzf#vim#files', a:000)
+      else
+          call call('fzf#vim#gitfiles', a:000)
+      endif
+    endfunction
+endif
 " }}}
 
 " Noe LaTeX-reier {{{
