@@ -30,6 +30,7 @@ if exists(":Plug")
     Plug 'Osse/double-tap'
     Plug 'nanotech/jellybeans.vim'
     Plug 'mhinz/vim-startify'
+    Plug 'richq/vim-cmake-completion'
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'PProvost/vim-ps1'
