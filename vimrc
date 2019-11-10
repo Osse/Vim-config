@@ -15,17 +15,13 @@ let g:plug_shallow = 0
 silent! call plug#begin()
 if exists(":Plug")
     Plug 'tpope/vim-surround'
-    Plug 'Lokaltog/vim-easymotion'
-    Plug 'dahu/vimple'
     Plug 'tomtom/tcomment_vim'
     Plug 'godlygeek/tabular'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-    Plug 'Rip-Rip/clang_complete'
     Plug 'tpope/vim-repeat'
-    Plug 'mileszs/ack.vim'
     Plug 'tpope/vim-fugitive'
     Plug 'Osse/double-tap'
     Plug 'nanotech/jellybeans.vim'
@@ -99,15 +95,6 @@ set cmdheight=2
 
 " Diverse mappings {{{
 let mapleader="ø"
-let g:EasyMotion_leader_key = '<Leader>'
-" Stuff to make EasyMotion work with my keyboard layout {{{
-nnoremap <Leader><Up>        :call EasyMotion#JK(0,1)<CR>
-nnoremap <Leader><Down>      :call EasyMotion#JK(0,0)<CR>
-onoremap <Leader><Up>        :call EasyMotion#JK(0,1)<CR>
-onoremap <Leader><Down>      :call EasyMotion#JK(0,0)<CR>
-vnoremap <Leader><Up>   :<C-U>call EasyMotion#JK(1,1)<CR>
-vnoremap <Leader><Down> :<C-U>call EasyMotion#JK(1,0)<CR>
-" }}}
 nnoremap !         ?
 nnoremap S         /
 nnoremap <Space>   <C-W><C-W>
@@ -152,16 +139,6 @@ let g:UltiSnipsExpandTrigger         = "<Tab>"
 let g:UltiSnipsJumpForwardTrigger    = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger   = "<S-tab>"
 let g:UltiSnipsSnippetDirectories = [ "osse_snippets", "UltiSnips"]
-" }}}
-
-" clang_complete settings {{{
-let g:clang_complete_copen  = 0
-let g:clang_complete_auto   = 0
-let g:clang_snippets        = 1
-let g:clang_snippets_engine = 'ultisnips'
-let g:clang_use_library = 1
-let g:clang_jumpto_declaration_key = 'sdfasdfadsfs'
-let g:clang_jumpto_back_key = 'sdfasdfadsfs'
 " }}}
 
 " FZF wrapper to combine Files and GitFiles {{{
