@@ -26,6 +26,7 @@ if exists(":Plug")
     Plug 'nanotech/jellybeans.vim'
     Plug 'mhinz/vim-startify'
     Plug 'PotatoesMaster/i3-vim-syntax'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 silent! call plug#end()
 " }}}
