@@ -19,8 +19,7 @@ if exists(":Plug")
     Plug 'godlygeek/tabular'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
+    Plug 'srstevenson/vim-picker'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-fugitive'
     Plug 'Osse/double-tap'
@@ -103,7 +102,8 @@ noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
 noremap  <Leader>p p=']
-nnoremap Q :Buffers<CR>
+nmap <unique> Q <Plug>(PickerBuffer)
+nmap <unique> <C-P> <Plug>(PickerEdit)
 vnoremap >         >gv
 vnoremap <         <gv
 nnoremap c)        v)?[.!?]\+?s-1<CR>c
@@ -139,20 +139,6 @@ let g:UltiSnipsExpandTrigger         = "<Tab>"
 let g:UltiSnipsJumpForwardTrigger    = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger   = "<S-tab>"
 let g:UltiSnipsSnippetDirectories = [ "osse_snippets", "UltiSnips"]
-" }}}
-
-" FZF wrapper to combine Files and GitFiles {{{
-command! -bang -nargs=? MyFiles call MyFiles(<q-args>, <bang>0)
-nnoremap <C-P> :<C-U>MyFiles<CR>
-
-function! MyFiles(...)
-  call system('git rev-parse --show-toplevel')
-  if (v:shell_error)
-      call call('fzf#vim#files', a:000)
-  else
-      call call('fzf#vim#gitfiles', a:000)
-  endif
-endfunction
 " }}}
 
 " Noe LaTeX-reier {{{
