@@ -27,6 +27,7 @@ if exists(":Plug")
     Plug 'mhinz/vim-startify'
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'PProvost/vim-ps1'
 endif
 silent! call plug#end()
 " }}}
@@ -158,6 +159,7 @@ let g:startify_bookmarks = [
             \ { 'z': '~/.zshrc' },
             \ { 'b': '~/.bashrc' },
             \ { 'g': '~/.gitconfig' },
+            \ { 'p': '/u/Docs/WindowsPowerShell/Microsoft.PowerShell_profile.ps1' },
             \ ]
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
