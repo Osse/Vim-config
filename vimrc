@@ -186,7 +186,7 @@ let g:startify_bookmarks = [
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
 " }}}
-"
+
 " PHP stuff from ftplugin/php.vim {{{
 let g:php_folding=2
 let php_htmlInString=1
