@@ -11,3 +11,4 @@ tags/tags
 # ignore the undodir
 /undo
 /swap
+autoload/plug.vim
