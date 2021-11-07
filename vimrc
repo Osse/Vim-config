@@ -10,6 +10,12 @@ if has("win32")
     set runtimepath+=~/.vim/after
 endif
 
+if empty($MSYSTEM)
+    let fuzzy = 'fzf'
+else
+    let fuzzy = 'fzy'
+endif
+
 " Start Plug {{{
 let g:plug_shallow = 0
 silent! call plug#begin()
@@ -19,10 +25,10 @@ if exists(":Plug")
     Plug 'godlygeek/tabular'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    if empty($MSYSTEM)
+    if fuzzy == 'fzf'
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
         Plug 'junegunn/fzf.vim'
-    else
+    elseif fuzzy == 'fzy'
         Plug 'srstevenson/vim-picker'
     endif
     Plug 'tpope/vim-repeat'
@@ -34,6 +40,7 @@ if exists(":Plug")
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'PProvost/vim-ps1'
+    Plug 'rust-lang/rust.vim'
 endif
 silent! call plug#end()
 " }}}
@@ -110,8 +117,6 @@ noremap  ZA        :qa!<CR>
 noremap  ¤         $
 noremap  æ         ^
 noremap  <Leader>p p=']
-nmap <unique> Q <Plug>(PickerBuffer)
-nmap <unique> <C-P> <Plug>(PickerEdit)
 vnoremap >         >gv
 vnoremap <         <gv
 nnoremap c)        v)?[.!?]\+?s-1<CR>c
@@ -149,19 +154,23 @@ let g:UltiSnipsJumpBackwardTrigger   = "<S-tab>"
 let g:UltiSnipsSnippetDirectories = [ "osse_snippets", "UltiSnips"]
 " }}}
 
-" FZF wrapper to combine Files and GitFiles {{{
-if empty($MSYSTEM)
-    command! -bang -nargs=? MyFiles call MyFiles(<q-args>, <bang>0)
-    nnoremap <C-P> :<C-U>MyFiles<CR>
-
+" Fuzzy-finder specific mappings {{{
+if fuzzy == 'fzf'
     function! MyFiles(...)
       call system('git rev-parse --show-toplevel')
       if (v:shell_error)
-          call call('fzf#vim#files', a:000)
+          call call('fzf#vim#files', a:000) " Use :Files instead?
       else
-          call call('fzf#vim#gitfiles', a:000)
+          call call('fzf#vim#gitfiles', a:000) " Use :GFiles instead?
       endif
     endfunction
+
+    command! -bang -nargs=? MyFiles call MyFiles(<q-args>, <bang>0)
+    nnoremap <C-P> :<C-U>MyFiles<CR>
+    nmap <unique> Q :Buffers<CR>
+elseif fuzzy == 'fzy'
+    nmap <unique> <C-P> <Plug>(PickerEdit)
+    nmap <unique> Q <Plug>(PickerBuffer)
 endif
 " }}}
 
@@ -191,6 +200,10 @@ let g:startify_change_to_vcs_root = 1
 let g:php_folding=2
 let php_htmlInString=1
 let php_sql_query=1
+" }}}
+
+" Rust stuff {{{
+let g:cargo_makeprg_params = 'build'
 " }}}
 
 " Oppretter/bruker en autcmd-gruppe som heter minvimrc {{{
