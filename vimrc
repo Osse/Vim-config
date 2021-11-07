@@ -12,8 +12,10 @@ endif
 
 if empty($MSYSTEM)
     let fuzzy = 'fzf'
+    let use_coc = 1
 else
     let fuzzy = 'fzy'
+    let use_coc = 0
 endif
 
 " Start Plug {{{
@@ -38,7 +40,9 @@ if exists(":Plug")
     Plug 'mhinz/vim-startify'
     Plug 'richq/vim-cmake-completion'
     Plug 'PotatoesMaster/i3-vim-syntax'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    if use_coc == 1
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    endif
     Plug 'PProvost/vim-ps1'
     Plug 'rust-lang/rust.vim'
 endif
