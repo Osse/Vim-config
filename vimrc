@@ -213,6 +213,15 @@ func! SynStack()
 endfunc
 " }}}
 
+if $TERM == 'xterm-kitty'
+    " vim hardcodes background color erase even if the terminfo file does
+    " not contain bce (not to mention that libvte based terminals
+    " incorrectly contain bce in their terminfo files). This causes
+    " incorrect background rendering when using a color theme with a
+    " background color.
+    let &t_ut=''
+endif
+
 let gitlvimrc = findfile('.git/lvimrc', ';')
 for rc in findfile('.lvimrc', ';', -1) + (gitlvimrc != "" ? [fnamemodify(gitlvimrc, ':p')] : [])
     let path = substitute(rc, '/\(.git/lvimrc\|.lvimrc\)$', '', '')
