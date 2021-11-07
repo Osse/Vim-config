@@ -19,7 +19,7 @@ snippet "([,_ ])([^,_ ]+) txt" "\texttt{}" r
 endsnippet
 
 snippet "\b(\w{2,3})ref" "Clever reference" r
-\`!p snip.rv = ('C' if match.group(1)[0].isupper() else 'c') + 'ref{'+ match.group(1).lower()`:$1}$0
+\\`!p snip.rv = ('C' if match.group(1)[0].isupper() else 'c') + 'ref{'+ match.group(1).lower()`:$1}$0
 endsnippet
 
 snippet r "\ref{}" w!
