@@ -45,6 +45,7 @@ if exists(":Plug")
     endif
     Plug 'PProvost/vim-ps1'
     Plug 'rust-lang/rust.vim'
+    Plug 'cespare/vim-toml', { 'branch': 'main' }
 endif
 silent! call plug#end()
 " }}}
